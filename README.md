@@ -3,17 +3,15 @@
 [![Discord](https://img.shields.io/discord/778301671302365256?logo=Discord)](https://discord.gg/n27zjVTbDz)
 ![Build Status develop](https://img.shields.io/travis/knowm/XChange/develop?label=develop)
 
-XChange is a Java library providing a simple and consistent API for interacting with 60+ Bitcoin and other crypto currency exchanges, providing a consistent interface for trading and accessing market data.
-
+XChange是一个Java库，提供了一个简单且一致的API，可与60多个比特币和其他加密货币交易所进行交互，从而为交易和访问市场数据提供了一致的接口。
 ## Important!
 
-The world of Bitcoin changes quickly and XChange is no exception. For the latest bugfixes and features you should use the [snapshot jars](https://oss.sonatype.org/content/groups/public/org/knowm/xchange/) or build yourself from the `develop` branch. See below for more details about building with Maven. To report bugs and see what issues people are currently working on see the [issues page](https://github.com/knowm/XChange/issues).
-
+比特币的世界瞬息万变，XChange也不例外。 对于最新的错误修复和功能，您应该使用[快照罐]（https://oss.sonatype.org/content/groups/public/org/knowm/xchange/）或从“开发”分支进行构建。 有关使用Maven进行构建的更多详细信息，请参见下文。 要报告错误并查看人们当前正在处理的问题，请参阅[问题页面]（https://github.com/knowm/XChange/issues）。
 ## Description
 
-XChange is a library providing a simple and consistent API for interacting with a diverse set of crypto currency exchanges.
+XChange是一个提供简单且一致的API的库，用于与各种加密货币交易所进行交互。
 
-Basic usage is very simple: Create an `Exchange` instance, get the appropriate service, and request data. More complex usages are progressively detailed below.
+基本用法非常简单：创建一个“ Exchange”实例，获取适当的服务，并请求数据。 下面将逐步详细介绍更复杂的用法。
 
 ## Example 1: Public Market Data
 
@@ -26,8 +24,7 @@ System.out.println(ticker.toString());
 
 ## Example 2: Private Account Info
 
-To use APIs which require authentication, create an `ExchangeSpecification` with your API credentials and pass this to `createExchange()`. Example:
-
+要使用需要身份验证的API，请ExchangeSpecification使用您的API凭据创建一个，并将其传递给createExchange()。例：
 ```java
 ExchangeSpecification exSpec = new BitstampExchange().getDefaultExchangeSpecification();
 exSpec.setUserName("34387");
@@ -36,10 +33,9 @@ exSpec.setSecretKey("sisJixU6Xd0d1yr6w02EHCb9UwYzTNuj");
 Exchange bitstamp = ExchangeFactory.INSTANCE.createExchange(exSpec);
 ```
 
-N.B.: while most exchange use an API key and secret key, others (such as username on Bitstamp or passphrase on Coinbase Pro) are exchange-specific. For more examples of adding the keys to the `ExchangeSpecification`, including storing them in a configuration file, see [Frequently Asked Questions](https://github.com/knowm/XChange/wiki/Frequently-Asked-Questions).
+注意：大多数交易所使用API​​密钥和秘密密钥，而其他交易所（例如Bitstamp上的用户名或Coinbase Pro上的密码）则是特定于交易所的。有关将密钥添加到的更多示例ExchangeSpecification，包括将密钥存储在配置文件中，请参阅“常见问题”。
 
-Once you have an authenticated `Exchange`, the private API services, `AccountService` and `TradeService`, can be used to access private data:
-
+获得身份验证后Exchange，即可使用私有API服务AccountService和TradeService来访问私有数据：
 ```java
 // Get the account information
 AccountService accountService = bitstamp.getAccountService();
@@ -47,16 +43,14 @@ AccountInfo accountInfo = accountService.getAccountInfo();
 System.out.println(accountInfo.toString());
 ```
 
-All exchange implementations expose the same API, but you can also directly access the underlying "raw" data from the individual exchanges if you need to.
-
+所有交换实现都公开相同的API，但是如果需要，您也可以直接从各个交换中访问基础的“原始”数据。
 ## Example 3: Streaming data and websockets
 
-The above API is usually fully supported on all exchanges and is best used for occasional requests and polling on relatively long intervals. Many exchanges, however, heavily limit the frequency that these requests can be made, and advise instead that you use their websocket API if you need up-to-the-second information.
+T上面的API通常在所有交易所中都得到完全支持，并且最适合偶尔请求和以相对较长的时间间隔进行轮询。但是，许多交易所严重限制了发出这些请求的频率，如果需要最新信息，则建议您使用其websocket API。
 
-For a smaller number of exchanges, the websocket-based `StreamingExchange` API is also available. This uses [Reactive streams](http://reactivex.io/) to allow you to efficiently subscribe to changes relating to thousands of coin pairs without requiring large numbers of threads.
+对于较少的交换，StreamingExchange也可以使用基于websocket的API。这使用反应性流，使您可以有效地订阅与数千个硬币对有关的更改，而无需使用大量线程。
 
-You will need to import an additional dependency for the exchange you are using (see below), then example usage is as follows:
-
+您将需要为正在使用的交换导入其他依赖项（请参见下文），然后示例用法如下：
 ```java
 // Use StreamingExchangeFactory instead of ExchangeFactory
 StreamingExchange exchange = StreamingExchangeFactory.INSTANCE.createExchange(BitstampStreamingExchange.class);
@@ -87,8 +81,7 @@ subscription2.dispose();
 exchange.disconnect().blockingAwait();
 ```
 
-Authentication, if supported for the exchange, works the same way as for the main API, via an `ExchangeSpecification`. For more information on what is supported, see the Wiki.
-
+如果支持交换，则通过身份验证与主API的工作方式相同ExchangeSpecification。有关受支持内容的更多信息，请参见Wiki。
 ## More information
 
 Now go ahead and [study some more examples](http://knowm.org/open-source/xchange/xchange-example-code), [download the thing](http://knowm.org/open-source/xchange/xchange-change-log/) and [provide feedback](https://github.com/knowm/XChange/issues).

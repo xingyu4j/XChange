@@ -188,7 +188,7 @@ public class Currency implements Comparable<Currency>, Serializable {
   public static final Currency OMG = createCurrency("OMG", "OmiseGO", null);
   public static final Currency OMR = createCurrency("OMR", "Omani Rial", null);
   public static final Currency PAB = createCurrency("PAB", "Panamanian Balboa", null);
-  public static final Currency PEN = createCurrency("PEN", "Peruvian Nuevo Sol", null);
+  public static final Currency PEN = createCurrency("PEN", "Peruvian Sol", null);
   public static final Currency PGK = createCurrency("PGK", "Papua New Guinean Kina", null);
   public static final Currency PHP = createCurrency("PHP", "Philippine Peso", null);
   public static final Currency PKR = createCurrency("PKR", "Pakistani Rupee", null);
@@ -563,13 +563,18 @@ public class Currency implements Comparable<Currency>, Serializable {
    */
   public Currency getCodeCurrency(String code) {
 
-    if (code.equals(this.code)) return this;
+    if (code.equals(this.code)) {
+      return this;
+    }
 
     Currency currency = getInstance(code);
-    if (currency.equals(this)) return currency;
+    if (currency.equals(this)) {
+      return currency;
+    }
 
-    if (!attributes.codes.contains(code))
+    if (!attributes.codes.contains(code)) {
       throw new IllegalArgumentException("Code not listed for this currency");
+    }
 
     return new Currency(code, attributes);
   }
@@ -580,7 +585,9 @@ public class Currency implements Comparable<Currency>, Serializable {
    */
   public Currency getIso4217Currency() {
 
-    if (attributes.isoCode == null) return this;
+    if (attributes.isoCode == null) {
+      return this;
+    }
 
     // The logic for setting isoCode is in CurrencyAttributes
 
@@ -643,11 +650,17 @@ public class Currency implements Comparable<Currency>, Serializable {
   @Override
   public int compareTo(Currency o) {
 
-    if (attributes.equals(o.attributes)) return 0;
+    if (attributes.equals(o.attributes)) {
+      return 0;
+    }
 
     int comparison = code.compareTo(o.code);
-    if (comparison == 0) comparison = getDisplayName().compareTo(o.getDisplayName());
-    if (comparison == 0) comparison = hashCode() - o.hashCode();
+    if (comparison == 0) {
+      comparison = getDisplayName().compareTo(o.getDisplayName());
+    }
+    if (comparison == 0) {
+      comparison = hashCode() - o.hashCode();
+    }
     return comparison;
   }
 
@@ -718,14 +731,21 @@ public class Currency implements Comparable<Currency>, Serializable {
 
     @Override
     public boolean equals(Object obj) {
-      if (this == obj) return true;
-      if (obj == null) return false;
-      if (getClass() != obj.getClass()) return false;
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null) {
+        return false;
+      }
+      if (getClass() != obj.getClass()) {
+        return false;
+      }
       CurrencyAttributes other = (CurrencyAttributes) obj;
       if (commonCode == null) {
-        if (other.commonCode != null) return false;
-      } else if (!commonCode.equals(other.commonCode)) return false;
-      return true;
+        return other.commonCode == null;
+      } else {
+        return commonCode.equals(other.commonCode);
+      }
     }
   }
 }
