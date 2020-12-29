@@ -8,6 +8,10 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 充值
+ * @author xingyu
+ */
 public final class DepositList extends WapiResponse<List<BinanceDeposit>> {
 
     private final BinanceDeposit[] depositList;
@@ -41,11 +45,29 @@ public final class DepositList extends WapiResponse<List<BinanceDeposit>> {
                    }
              */
 
+        /**
+         * 币安系统记录该笔充值的时间
+         */
         private long insertTime;
+        /**
+         * 充值金额
+         */
         private BigDecimal amount;
+        /**
+         * 充值资产
+         */
         private String asset;
+        /**
+         * 充值交易id
+         */
         private String txId;
+        /**
+         * 充值地址
+         */
         private String address;
+        /**
+         * 充值地址
+         */
         private String addressTag;
 
         /**

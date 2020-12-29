@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Data object representing a Trade
+ * 交易的数据对象
  */
 @JsonDeserialize(builder = Trade.Builder.class)
 public class Trade implements Serializable {

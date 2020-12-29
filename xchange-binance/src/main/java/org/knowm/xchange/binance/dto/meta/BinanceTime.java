@@ -4,6 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
+/**
+ * 获取服务器时间
+ *
+ * @author xingyu
+ */
 public class BinanceTime {
 
     @JsonProperty

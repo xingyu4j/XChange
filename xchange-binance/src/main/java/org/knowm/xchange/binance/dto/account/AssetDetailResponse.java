@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * 上架资产详情 返回
- * @author 99121
+ * @author xingyu
  */
 public class AssetDetailResponse {
 

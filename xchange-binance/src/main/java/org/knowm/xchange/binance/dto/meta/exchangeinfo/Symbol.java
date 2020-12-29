@@ -1,5 +1,10 @@
 package org.knowm.xchange.binance.dto.meta.exchangeinfo;
 
+/**
+ * 交易对信息
+ *
+ * @author xingyu
+ */
 public class Symbol {
 
     private String quoteAsset;
@@ -11,11 +16,17 @@ public class Symbol {
     private String isMarginTradingAllowed;
 
     private String isSpotTradingAllowed;
-
+    /**
+     * 交易对基础名称
+     */
     private String baseAsset;
-
+    /**
+     * 交易对名称
+     */
     private String symbol;
-
+    /**
+     * 状态
+     */
     private String status;
 
     private String quotePrecision;

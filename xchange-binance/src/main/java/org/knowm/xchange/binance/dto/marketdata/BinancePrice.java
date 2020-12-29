@@ -7,9 +7,18 @@ import org.knowm.xchange.utils.jackson.CurrencyPairDeserializer;
 
 import java.math.BigDecimal;
 
+/**
+ * 价格
+ * @author xingyu
+ */
 public final class BinancePrice implements Comparable<BinancePrice> {
-
+    /**
+     * 交易对
+     */
     private final CurrencyPair pair;
+    /**
+     * 价格
+     */
     private final BigDecimal price;
 
     public BinancePrice(

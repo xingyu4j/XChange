@@ -7,6 +7,10 @@ import si.mazi.rescu.HttpStatusExceptionSupport;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 币安异常
+ * @author 99121
+ */
 public class BinanceException extends HttpStatusExceptionSupport implements HttpResponseAware {
 
     private final int code;

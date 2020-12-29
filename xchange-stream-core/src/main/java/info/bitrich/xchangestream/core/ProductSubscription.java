@@ -9,8 +9,8 @@ import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.currency.CurrencyPair;
 
 /**
- * Use to specify subscriptions during the connect phase For instancing, use builder @link {@link
- * ProductSubscriptionBuilder}
+ * 用于在连接阶段指定订阅对于实例化，请使用builder @link {@link ProductSubscriptionBuilder}
+ * @author 99121
  */
 public class ProductSubscription {
   private final List<CurrencyPair> orderBook;

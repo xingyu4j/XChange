@@ -6,9 +6,10 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
- * DTO representing account information
+ * 帐户信息DTO
  *
- * <p>Account information is anything particular associated with the user's login
+ * <p>帐户信息是与用户登录相关的任何特定信息
+ * @author 99121
  */
 public final class AccountInfo implements Serializable {
 

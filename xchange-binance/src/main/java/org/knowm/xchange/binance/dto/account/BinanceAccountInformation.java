@@ -5,6 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * 账户信息
+ * @author xingyu
+ */
 public final class BinanceAccountInformation {
 
     public final BigDecimal makerCommission;

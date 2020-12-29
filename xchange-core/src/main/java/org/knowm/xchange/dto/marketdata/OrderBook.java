@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * DTO representing the exchange order book
+ * DTO 代表交换订单簿
  */
 public final class OrderBook implements Serializable {
 

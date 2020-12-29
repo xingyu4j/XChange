@@ -4,12 +4,31 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 
+/**
+ * 当前最优挂单
+ *
+ * @author xingyu
+ */
 public final class BinancePriceQuantity {
-
+    /**
+     * 交易对
+     */
     public final String symbol;
+    /**
+     * 最高买单 价格
+     */
     public final BigDecimal bidPrice;
+    /**
+     * 最高买单 数量
+     */
     public final BigDecimal bidQty;
+    /**
+     * 最低卖单 价格
+     */
     public final BigDecimal askPrice;
+    /**
+     * 最低卖单 数量
+     */
     public final BigDecimal askQty;
 
     public BinancePriceQuantity(

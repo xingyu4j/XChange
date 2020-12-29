@@ -12,6 +12,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author 99121
+ */
 public final class ExchangeRestProxyBuilder<T> {
 
     private final Class<T> restInterface;
@@ -46,8 +49,8 @@ public final class ExchangeRestProxyBuilder<T> {
      * @return a rescu client config object
      */
     public static ClientConfig createClientConfig(ExchangeSpecification exchangeSpecification) {
-
-        ClientConfig rescuConfig = new ClientConfig(); // create default rescu config
+        // create default rescu config
+        ClientConfig rescuConfig = new ClientConfig();
 
         // set per exchange connection- and read-timeout (if they have been set in the
         // ExchangeSpecification)

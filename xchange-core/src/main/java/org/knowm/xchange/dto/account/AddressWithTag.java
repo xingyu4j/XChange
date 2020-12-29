@@ -3,6 +3,9 @@ package org.knowm.xchange.dto.account;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author 99121
+ */
 public final class AddressWithTag implements Serializable {
 
     private final String address;

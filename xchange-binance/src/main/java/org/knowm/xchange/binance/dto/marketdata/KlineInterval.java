@@ -2,6 +2,11 @@ package org.knowm.xchange.binance.dto.marketdata;
 
 import static java.util.concurrent.TimeUnit.*;
 
+/**
+ * K线间隔
+ *
+ * @author xingyu
+ */
 public enum KlineInterval {
     m1("1m", MINUTES.toMillis(1)),
     m3("3m", MINUTES.toMillis(3)),

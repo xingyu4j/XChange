@@ -8,34 +8,88 @@ import org.knowm.xchange.dto.marketdata.Ticker;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author xingyu
+ */
 public final class BinanceTicker24h {
-
+    /**
+     * 24小时价格变动
+     */
     private final BigDecimal priceChange;
+    /**
+     * 24小时价格变动百分比
+     */
     private final BigDecimal priceChangePercent;
+    /**
+     * 加权平均价
+     */
     private final BigDecimal weightedAvgPrice;
     private final BigDecimal prevClosePrice;
+    /**
+     * 最近一次成交价
+     */
     private final BigDecimal lastPrice;
+    /**
+     * 最近一次成交额
+     */
     private final BigDecimal lastQty;
     private final BigDecimal bidPrice;
     private final BigDecimal bidQty;
     private final BigDecimal askPrice;
     private final BigDecimal askQty;
+    /**
+     * 24小时内第一次成交的价格
+     */
     private final BigDecimal openPrice;
+    /**
+     * 24小时最高价
+     */
     private final BigDecimal highPrice;
+    /**
+     * 24小时最低价
+     */
     private final BigDecimal lowPrice;
+    /**
+     * 24小时成交量
+     */
     private final BigDecimal volume;
+    /**
+     * 24小时成交额
+     */
     private final BigDecimal quoteVolume;
+    /**
+     * 24小时内，第一笔交易的发生时间
+     */
     private final long openTime;
+    /**
+     * 24小时内，最后一笔交易的发生时间
+     */
     private final long closeTime;
+    /**
+     * 首笔成交id
+     */
     private final long firstId;
+    /**
+     * 末笔成交id
+     */
     private final long lastId;
+    /**
+     * 成交笔数
+     */
     private final long count;
+    /**
+     * 交易对
+     */
     private final String symbol;
 
-    // The curency pair that is unfortunately not returned in the response
+    /**
+     * 交易对
+     */
     private CurrencyPair pair;
 
-    // The cached ticker
+    /**
+     * 行情
+     */
     private Ticker ticker;
 
     public BinanceTicker24h(

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * DTO representing a wallet
+ * DTO 钱包
  *
  * <p>A wallet has a set of current balances in various currencies held on the exchange.
  */
@@ -17,27 +17,27 @@ public final class Wallet implements Serializable {
 
     private static final long serialVersionUID = -4136681413143690633L;
     /**
-     * The keys represent the currency of the wallet.
+     * 键代表钱包的货币。
      */
     private final Map<Currency, Balance> balances;
     /**
-     * Features supported by this wallet
+     * 该钱包支持的功能
      */
     private final Set<WalletFeature> features;
     /**
-     * A unique identifier for this wallet
+     * 该钱包的唯一标识符
      */
     private String id;
     /**
-     * A descriptive name for this wallet. Defaults to {@link #id}
+     * 此钱包的描述性名称。 默认为 {@link #id}
      */
     private String name;
     /**
-     * Maximum leverage for margin trading supported by this wallet
+     * 该钱包支持的最大保证金交易杠杆
      */
     private BigDecimal maxLeverage = BigDecimal.ZERO;
     /**
-     * Current leverage for margin trading done on this wallet
+     * 在此钱包上进行保证金交易的当前杠杆
      */
     private BigDecimal currentLeverage = BigDecimal.ZERO;
 
@@ -144,8 +144,12 @@ public final class Wallet implements Serializable {
     @Override
     public boolean equals(Object object) {
 
-        if (object == this) return true;
-        if (!(object instanceof Wallet)) return false;
+        if (object == this) {
+            return true;
+        }
+        if (!(object instanceof Wallet)) {
+            return false;
+        }
 
         Wallet wallet = (Wallet) object;
         return Objects.equals(id, wallet.id)

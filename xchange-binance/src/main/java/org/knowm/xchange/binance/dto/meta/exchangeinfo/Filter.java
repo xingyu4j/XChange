@@ -1,5 +1,8 @@
 package org.knowm.xchange.binance.dto.meta.exchangeinfo;
 
+/**
+ * @author xingyu
+ */
 public class Filter {
     private String maxPrice;
 

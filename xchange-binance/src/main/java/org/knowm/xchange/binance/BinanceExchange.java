@@ -23,6 +23,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Map;
 
+/**
+ * @author xingyu
+ */
 public class BinanceExchange extends BaseExchange {
 
     private static ResilienceRegistries RESILIENCE_REGISTRIES;

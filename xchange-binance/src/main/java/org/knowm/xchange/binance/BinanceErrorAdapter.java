@@ -5,7 +5,8 @@ import org.knowm.xchange.binance.dto.BinanceException;
 import org.knowm.xchange.exceptions.*;
 
 /**
- * @author walec51
+ * 错误适配器
+ * @author xingyu
  */
 public final class BinanceErrorAdapter {
 
@@ -19,6 +20,7 @@ public final class BinanceErrorAdapter {
         }
         switch (e.getCode()) {
             case -1002:
+            case -1122:
                 return new ExchangeSecurityException(message, e);
             case -1003:
                 return new RateLimitExceededException(message, e);
@@ -38,8 +40,6 @@ public final class BinanceErrorAdapter {
                 return new OperationTimeoutException(message, e);
             case -1121:
                 return new CurrencyPairNotValidException(message, e);
-            case -1122:
-                return new ExchangeSecurityException(message, e);
             default:
                 return new ExchangeException(message, e);
         }

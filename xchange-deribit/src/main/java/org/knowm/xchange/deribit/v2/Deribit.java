@@ -25,7 +25,7 @@ public interface Deribit {
    * @param expired optional, set to true to show expired instruments instead of active ones
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("get_instruments")
@@ -41,7 +41,7 @@ public interface Deribit {
    *
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("get_currencies")
@@ -56,7 +56,7 @@ public interface Deribit {
    *     20
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("get_order_book")
@@ -76,7 +76,7 @@ public interface Deribit {
    *     no sorting, results will be returned in order in which they left the database)
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("get_last_trades_by_instrument")
@@ -96,7 +96,7 @@ public interface Deribit {
    * @param instrumentName required, Instrument name
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("get_book_summary_by_instrument")
@@ -109,7 +109,7 @@ public interface Deribit {
    * @param instrumentName required, Instrument name
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("ticker")
@@ -141,7 +141,7 @@ public interface Deribit {
    *     as scope = wallet:read
    * @return
    * @throws DeribitException
-   * @throws IOException
+   * @throws IOException IOException
    */
   @GET
   @Path("auth")

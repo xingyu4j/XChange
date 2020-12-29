@@ -6,10 +6,23 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.function.BiConsumer;
 
+/**
+ * 深度信息
+ *
+ * @author xingyu
+ */
 public final class BinanceOrderbook {
-
+    /**
+     * Last update ID
+     */
     public final long lastUpdateId;
+    /**
+     * 价位\挂单量
+     */
     public final SortedMap<BigDecimal, BigDecimal> bids;
+    /**
+     * 价位\挂单量
+     */
     public final SortedMap<BigDecimal, BigDecimal> asks;
 
     public BinanceOrderbook(

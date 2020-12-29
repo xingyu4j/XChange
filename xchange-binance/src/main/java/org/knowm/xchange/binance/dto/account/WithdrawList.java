@@ -8,6 +8,11 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 提币
+ *
+ * @author xingyu
+ */
 public final class WithdrawList extends WapiResponse<List<BinanceWithdraw>> {
 
     private final BinanceWithdraw[] withdrawList;
@@ -38,14 +43,42 @@ public final class WithdrawList extends WapiResponse<List<BinanceWithdraw>> {
 
     @Data
     public static final class BinanceWithdraw {
-        private BigDecimal amount;
-        private BigDecimal transactionFee;
-        private String address;
-        private String addressTag;
-        private long successTime;
-        private String txId;
+        /**
+         * 该笔提现在币安的id
+         */
         private String id;
+        /**
+         * 提现转出金额
+         */
+        private BigDecimal amount;
+        /**
+         * 提现手续费
+         */
+        private BigDecimal transactionFee;
+        /**
+         * 提现目的地址
+         */
+        private String address;
+        /**
+         * 提现备注 只对某些币种存在
+         */
+        private String addressTag;
+        /**
+         * 時間
+         */
+        private long successTime;
+        /**
+         * 提现交易id
+         */
+        private String txId;
+
+        /**
+         * 资产
+         */
         private String asset;
+        /**
+         * 时间
+         */
         private long applyTime;
         /**
          * (0:Email Sent,1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6Completed)

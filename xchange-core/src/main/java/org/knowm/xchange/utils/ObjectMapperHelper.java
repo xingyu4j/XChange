@@ -59,7 +59,7 @@ public class ObjectMapperHelper {
      * @param <T>       The object type
      * @param valueType The object to be converted
      * @return A copy of the object performed via JSON.
-     * @throws IOException If there are deserialization issues.
+     * @throws IOException IOException IOExceptionIf there are deserialization issues.
      */
     @SuppressWarnings("unchecked")
     public static <T> T viaJSON(T valueType) throws IOException {

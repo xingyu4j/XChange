@@ -9,144 +9,148 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Factory to provide the following to {@link StreamingExchange}:
+ * 工厂提供以下内容 {@link StreamingExchange}:
  *
  * <ul>
- *   <li>Manages the creation of specific Exchange implementations using runtime dependencies
+ *   <li>使用运行时依赖项管理特定交易所实现的创建
  * </ul>
  */
 public enum StreamingExchangeFactory {
-  INSTANCE;
-
-  // flags
-  private final Logger LOG = LoggerFactory.getLogger(ExchangeFactory.class);
-
-  /** Constructor */
-  private StreamingExchangeFactory() {}
-
   /**
-   * Create an Exchange object without default ExchangeSpecification
-   *
-   * <p>The factory is parameterised with the name of the exchange implementation class. This must
-   * be a class extending {@link org.knowm.xchange.Exchange}.
-   *
-   * @param exchangeClassName the fully-qualified class name of the exchange
-   * @return a new exchange instance configured with the default {@link
-   *     org.knowm.xchange.ExchangeSpecification}
+   * 实例
    */
-  public StreamingExchange createExchangeWithoutSpecification(String exchangeClassName) {
+    INSTANCE;
 
-    Assert.notNull(exchangeClassName, "exchangeClassName cannot be null");
 
-    LOG.debug("Creating default exchange from class name");
+    private final Logger LOG = LoggerFactory.getLogger(ExchangeFactory.class);
 
-    final Class<? extends StreamingExchange> exchangeClass =
-        exchangeClassForName(exchangeClassName);
-    return createExchangeWithoutSpecification(exchangeClass);
-  }
-
-  private static Class<? extends StreamingExchange> exchangeClassForName(String exchangeClassName) {
-    // Attempt to create an instance of the exchange provider
-    try {
-
-      // Attempt to locate the exchange provider on the classpath
-      Class<?> exchangeProviderClass = Class.forName(exchangeClassName);
-
-      // Test that the class implements Exchange
-      if (StreamingExchange.class.isAssignableFrom(exchangeProviderClass)) {
-        return (Class<? extends StreamingExchange>) exchangeProviderClass;
-      } else {
-        throw new ExchangeException(
-            "Class '" + exchangeClassName + "' does not implement Exchange");
-      }
-    } catch (ReflectiveOperationException e) {
-      throw new ExchangeException("Problem creating Exchange ", e);
+    /**
+     * Constructor
+     */
+    private StreamingExchangeFactory() {
     }
-  }
 
-  public StreamingExchange createExchangeWithoutSpecification(
-      Class<? extends StreamingExchange> exchangeClass) {
-    Assert.notNull(exchangeClass, "exchangeClass cannot be null");
-    LOG.debug("Creating default exchange from class name");
+    /**
+     * 创建没有默认ExchangeSpecification的Exchange对象
+     *
+     * <p>使用交换实现类的名称对工厂进行参数化。 这必须是扩展的类 {@link org.knowm.xchange.Exchange}.
+     *
+     * @param exchangeClassName the fully-qualified class name of the exchange
+     * @return 使用默认配置的新交换实例 {@link
+     * org.knowm.xchange.ExchangeSpecification}
+     */
+    public StreamingExchange createExchangeWithoutSpecification(String exchangeClassName) {
 
-    // Attempt to create an instance of the exchange provider
-    try {
-      // Instantiate through the default constructor and use the default exchange specification
-      return exchangeClass.getConstructor().newInstance();
-    } catch (ReflectiveOperationException e) {
-      throw new ExchangeException(
-          "Problem creating Exchange for class: " + exchangeClass.getName(), e);
+        Assert.notNull(exchangeClassName, "exchangeClassName cannot be null");
+
+        LOG.debug("Creating default exchange from class name");
+
+        final Class<? extends StreamingExchange> exchangeClass =
+                exchangeClassForName(exchangeClassName);
+        return createExchangeWithoutSpecification(exchangeClass);
     }
-  }
 
-  /**
-   * Create an Exchange object with default ExchangeSpecification
-   *
-   * <p>The factory is parameterised with the name of the exchange implementation class. This must
-   * be a class extending {@link org.knowm.xchange.Exchange}.
-   *
-   * @param exchangeClassName the fully-qualified class name of the exchange
-   * @return a new exchange instance configured with the default {@link
-   *     org.knowm.xchange.ExchangeSpecification}
-   * @see this#createExchange(Class) Use createExchange by class for better performance
-   */
-  public StreamingExchange createExchange(String exchangeClassName) {
+    private static Class<? extends StreamingExchange> exchangeClassForName(String exchangeClassName) {
+        // 尝试创建交换提供程序的实例
+        try {
 
-    Assert.notNull(exchangeClassName, "exchangeClassName cannot be null");
+            // 尝试在类路径上找到交换提供者
+            Class<?> exchangeProviderClass = Class.forName(exchangeClassName);
 
-    LOG.debug("Creating default exchange from class name");
+            // 测试该类实现Exchange
+            if (StreamingExchange.class.isAssignableFrom(exchangeProviderClass)) {
+                return (Class<? extends StreamingExchange>) exchangeProviderClass;
+            } else {
+                throw new ExchangeException(
+                        "Class '" + exchangeClassName + "' does not implement Exchange");
+            }
+        } catch (ReflectiveOperationException e) {
+            throw new ExchangeException("Problem creating Exchange ", e);
+        }
+    }
 
-    StreamingExchange exchange = createExchangeWithoutSpecification(exchangeClassName);
-    exchange.applySpecification(exchange.getDefaultExchangeSpecification());
-    return exchange;
-  }
+    public StreamingExchange createExchangeWithoutSpecification(
+            Class<? extends StreamingExchange> exchangeClass) {
+        Assert.notNull(exchangeClass, "exchangeClass cannot be null");
+        LOG.debug("Creating default exchange from class name");
 
-  /**
-   * Create an Exchange object with default ExchangeSpecification
-   *
-   * <p>The factory is parameterised with the name of the exchange implementation class. This must
-   * be a class extending {@link org.knowm.xchange.Exchange}.
-   *
-   * @param exchangeClass the exchange to create
-   * @return a new exchange instance configured with the default {@link
-   *     org.knowm.xchange.ExchangeSpecification}
-   */
-  public StreamingExchange createExchange(Class<? extends StreamingExchange> exchangeClass) {
+        // 尝试创建交换提供程序的实例
+        try {
+            // 通过默认构造函数实例化并使用默认交换规范
+            return exchangeClass.getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new ExchangeException(
+                    "Problem creating Exchange for class: " + exchangeClass.getName(), e);
+        }
+    }
 
-    Assert.notNull(exchangeClass, "exchangeClass cannot be null");
+    /**
+     * 创建具有默认ExchangeSpecification的交易所对象
+     *
+     * <p>使用交换实现类的名称对工厂进行参数化。 这必须是扩展的类 {@link org.knowm.xchange.Exchange}.
+     *
+     * @param exchangeClassName the fully-qualified class name of the exchange
+     * @return a new exchange instance configured with the default {@link
+     * org.knowm.xchange.ExchangeSpecification}
+     * @see this#createExchange(Class) Use createExchange by class for better performance
+     */
+    public StreamingExchange createExchange(String exchangeClassName) {
 
-    LOG.debug("Creating default exchange from class name");
+        Assert.notNull(exchangeClassName, "exchangeClassName cannot be null");
 
-    StreamingExchange exchange = createExchangeWithoutSpecification(exchangeClass);
-    exchange.applySpecification(exchange.getDefaultExchangeSpecification());
-    return exchange;
-  }
+        LOG.debug("Creating default exchange from class name");
 
-  public StreamingExchange createExchange(ExchangeSpecification exchangeSpecification) {
-
-    Assert.notNull(exchangeSpecification, "exchangeSpecfication cannot be null");
-
-    LOG.debug("Creating exchange from specification");
-
-    // Attempt to create an instance of the exchange provider
-    Class<?> exchangeProviderClass = exchangeSpecification.getExchangeClass();
-    try {
-      // Test that the class implements Exchange
-      if (Exchange.class.isAssignableFrom(exchangeProviderClass)) {
-        // Instantiate through the default constructor
-        StreamingExchange exchange =
-            (StreamingExchange) exchangeProviderClass.getConstructor().newInstance();
-        exchange.applySpecification(exchangeSpecification);
+        StreamingExchange exchange = createExchangeWithoutSpecification(exchangeClassName);
+        exchange.applySpecification(exchange.getDefaultExchangeSpecification());
         return exchange;
-      } else {
-        throw new ExchangeException(
-            "Class '" + exchangeProviderClass.getName() + "' does not implement Exchange");
-      }
-    } catch (ReflectiveOperationException e) {
-      throw new ExchangeException("Problem starting exchange provider ", e);
     }
 
-    // Cannot be here due to exceptions
+    /**
+     * 创建具有默认ExchangeSpecification的Exchange对象
+     *
+     * <p>The factory is parameterised with the name of the exchange implementation class. This must
+     * be a class extending {@link org.knowm.xchange.Exchange}.
+     *
+     * @param exchangeClass the exchange to create
+     * @return a new exchange instance configured with the default {@link
+     * org.knowm.xchange.ExchangeSpecification}
+     */
+    public StreamingExchange createExchange(Class<? extends StreamingExchange> exchangeClass) {
 
-  }
+        Assert.notNull(exchangeClass, "exchangeClass cannot be null");
+
+        LOG.debug("Creating default exchange from class name");
+
+        StreamingExchange exchange = createExchangeWithoutSpecification(exchangeClass);
+        exchange.applySpecification(exchange.getDefaultExchangeSpecification());
+        return exchange;
+    }
+
+    public StreamingExchange createExchange(ExchangeSpecification exchangeSpecification) {
+
+        Assert.notNull(exchangeSpecification, "exchangeSpecfication cannot be null");
+
+        LOG.debug("Creating exchange from specification");
+
+        // Attempt to create an instance of the exchange provider
+        Class<?> exchangeProviderClass = exchangeSpecification.getExchangeClass();
+        try {
+            // Test that the class implements Exchange
+            if (Exchange.class.isAssignableFrom(exchangeProviderClass)) {
+                // Instantiate through the default constructor
+                StreamingExchange exchange =
+                        (StreamingExchange) exchangeProviderClass.getConstructor().newInstance();
+                exchange.applySpecification(exchangeSpecification);
+                return exchange;
+            } else {
+                throw new ExchangeException(
+                        "Class '" + exchangeProviderClass.getName() + "' does not implement Exchange");
+            }
+        } catch (ReflectiveOperationException e) {
+            throw new ExchangeException("Problem starting exchange provider ", e);
+        }
+
+        // Cannot be here due to exceptions
+
+    }
 }

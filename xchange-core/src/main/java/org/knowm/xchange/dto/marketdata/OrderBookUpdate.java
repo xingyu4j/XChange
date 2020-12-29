@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Immutable data object representing a Market Depth update.
+ * 代表市场深度更新的不可变数据对象。
  */
 public final class OrderBookUpdate implements Serializable {
 

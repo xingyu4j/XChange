@@ -5,17 +5,51 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * 交易
+ *
+ * @author xingyu
+ */
 public final class BinanceTrade {
-
+    /**
+     * trade ID
+     */
     public final long id;
+    /**
+     * 订单ID
+     */
     public final long orderId;
+    /**
+     * 成交价格
+     */
     public final BigDecimal price;
+    /**
+     * 成交量
+     */
     public final BigDecimal qty;
+    /**
+     * 交易费金额
+     */
     public final BigDecimal commission;
+    /**
+     * 交易费资产类型
+     */
     public final String commissionAsset;
+    /**
+     * 交易时间
+     */
     public final long time;
+    /**
+     * 是否是买家
+     */
     public final boolean isBuyer;
+    /**
+     * 是否是挂单方
+     */
     public final boolean isMaker;
+    /**
+     * isBestMatch
+     */
     public final boolean isBestMatch;
 
     public BinanceTrade(

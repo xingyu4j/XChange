@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * 上架资产详情 (USER_DATA)
  *
- * @author 99121
+ * @author xingyu
  */
 public class AssetDetail {
     /**

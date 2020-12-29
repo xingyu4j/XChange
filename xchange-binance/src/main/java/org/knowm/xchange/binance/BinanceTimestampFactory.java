@@ -15,6 +15,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.knowm.xchange.binance.BinanceResilience.REQUEST_WEIGHT_RATE_LIMITER;
 
+/**
+ * @author xingyu
+ */
 public class BinanceTimestampFactory implements SynchronizedValueFactory<Long> {
 
     private static final Logger LOG = LoggerFactory.getLogger(BinanceTimestampFactory.class);

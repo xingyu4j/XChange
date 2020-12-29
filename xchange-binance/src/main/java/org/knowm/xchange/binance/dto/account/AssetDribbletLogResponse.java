@@ -11,6 +11,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 小额资产转换BNB历史 (USER_DATA)
+ *
+ * @author xingyu
+ */
 public final class AssetDribbletLogResponse
         extends WapiResponse<AssetDribbletLogResponse.AssetDribbletLogResults> {
 
@@ -43,6 +48,9 @@ public final class AssetDribbletLogResponse
     @Data
     @NoArgsConstructor
     public static class AssetDribbletLogResults {
+        /**
+         * 共计发生过的转换笔数
+         */
         private BigDecimal total;
         private BnbExchange[] rows;
 
@@ -54,10 +62,25 @@ public final class AssetDribbletLogResponse
     @Data
     @NoArgsConstructor
     public static class BnbExchange {
+        /**
+         * 本次转换所得BNB
+         */
         private String transfered_total;
+        /**
+         * 本次转换手续费(BNB)
+         */
         private String service_charge_total;
+        /**
+         * 交易ID
+         */
         private BigInteger tran_id;
+        /**
+         * 本次转换的细节
+         */
         private BnbExchangeLog[] logs;
+        /**
+         * The time of this exchange.
+         */
         private String operate_time;
 
         public List<BnbExchangeLog> getData() {

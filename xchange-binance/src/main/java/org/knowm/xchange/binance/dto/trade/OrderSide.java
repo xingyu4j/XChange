@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 /**
  * 订单方向，买还是卖
- * @author 99121
+ * @author xingyu
  */
 
 public enum OrderSide {

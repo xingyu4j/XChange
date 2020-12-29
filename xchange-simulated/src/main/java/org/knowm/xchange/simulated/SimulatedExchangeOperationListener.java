@@ -18,7 +18,7 @@ public interface SimulatedExchangeOperationListener {
   /**
    * Called every time
    *
-   * @throws IOException
+   * @throws IOException IOException
    */
   void onSimulatedExchangeOperation() throws IOException;
 }

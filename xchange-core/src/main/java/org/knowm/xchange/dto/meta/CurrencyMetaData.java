@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+/**
+ * @author 99121
+ */
 public class CurrencyMetaData implements Serializable {
 
     private static final long serialVersionUID = -247899067657358542L;

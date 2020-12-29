@@ -35,7 +35,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param price
    * @param amount (只能是整数)
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTradeResult trade(String symbol, String type, String price, String amount)
       throws IOException {
@@ -67,7 +67,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    *     最终买卖类型由orders_data 中type 为准，如orders_data不设定type 则由上面type设置为准。 若，上面type没有设置，orderData
    *     必须设置type
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinMoreTradeResult batchTrade(String symbol, String type, String ordersData)
       throws IOException {
@@ -82,7 +82,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param orderId
    * @param symbol    交易对
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTradeResult cancelOrder(long orderId, String symbol) throws IOException {
 
@@ -96,7 +96,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param orderIds
    * @param symbol    交易对
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinBatchTradeResult cancelUpToThreeOrders(Set<Long> orderIds, String symbol)
       throws IOException {
@@ -110,7 +110,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    *
    * @param symbol    交易对
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinOrderResult getOrder(String symbol) throws IOException {
     return getOrder(-1, symbol);
@@ -122,7 +122,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param orderId
    * @param symbol    交易对
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinOrderResult getOrder(long orderId, String symbol) throws IOException {
 
@@ -154,7 +154,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param currentPage
    * @param pageLength
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinOrderResult getOrderHistory(
       String symbol, String status, String currentPage, String pageLength) throws IOException {
@@ -176,7 +176,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param matchPrice
    * @param leverRate
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTradeResult futuresTrade(
       String symbol,
@@ -209,7 +209,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param symbol    交易对
    * @param contract
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTradeResult futuresCancelOrder(long orderId, String symbol, FuturesContract contract)
       throws IOException {
@@ -229,7 +229,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param pageLength
    * @param contract
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFuturesOrderResult getFuturesOrder(
       long orderId, String symbol, String currentPage, String pageLength, FuturesContract contract)
@@ -278,7 +278,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param symbol    交易对
    * @param contract
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFuturesOrderResult getFuturesOrders(
       String orderIds, String symbol, FuturesContract contract) throws IOException {
@@ -295,7 +295,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param since
    * @param date
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFuturesTradeHistoryResult[] getFuturesTradesHistory(
       String symbol, long since, String date) throws IOException {
@@ -311,7 +311,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param symbol    交易对
    * @param contract
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinPositionResult getFuturesPosition(String symbol, FuturesContract contract)
       throws IOException {
@@ -334,7 +334,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param contractType
    * @param ordersData
    * @param leverRate
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinMoreTradeResult futureBatchTrade(
       String symbol, String contractType, String ordersData, String leverRate) throws IOException {
@@ -348,7 +348,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * @param currencyPair
    * @param contract
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinPositionResult getFuturesPositionsFixed(
       CurrencyPair currencyPair, FuturesContract contract) throws IOException {

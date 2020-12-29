@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  * 订单
- * @author 99121
+ * @author xingyu
  */
 public final class BinanceNewOrder {
     /**

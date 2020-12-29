@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * A Currency class roughly modeled after {@link java.util.Currency}. Each object retains the code
+ * 货币代码 {@link java.util.Currency}.
  * it was acquired with -- so {@link #getInstance}("BTC").{@link #getCurrencyCode}() will always be
  * "BTC", even though the proposed ISO 4217 code is "XBT"
  */

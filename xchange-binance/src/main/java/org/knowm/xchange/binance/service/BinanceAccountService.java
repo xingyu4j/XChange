@@ -90,7 +90,7 @@ public class BinanceAccountService extends BinanceAccountServiceRaw implements A
             BigDecimal takerFee =
                     acc.takerCommission.divide(new BigDecimal("10000"), 4, RoundingMode.UNNECESSARY);
 
-            Map<CurrencyPair, Fee> tradingFees = new HashMap<>();
+            Map<CurrencyPair, Fee> tradingFees = new HashMap<>(32);
             List<CurrencyPair> pairs = exchange.getExchangeSymbols();
 
             pairs.forEach(pair -> tradingFees.put(pair, new Fee(makerFee, takerFee)));

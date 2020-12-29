@@ -2,6 +2,9 @@ package org.knowm.xchange;
 
 import org.knowm.xchange.exceptions.ExchangeException;
 
+/**
+ * @author 99121
+ */
 public final class ExchangeClassUtils {
 
     private ExchangeClassUtils() {

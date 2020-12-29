@@ -7,6 +7,11 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 资产利息记录 (USER_DATA)
+ *
+ * @author xingyu
+ */
 public final class AssetDividendResponse
         extends SapiResponse<List<AssetDividendResponse.AssetDividend>> {
     private final AssetDividend[] rows;

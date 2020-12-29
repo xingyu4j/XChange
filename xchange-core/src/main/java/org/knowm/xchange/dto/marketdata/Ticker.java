@@ -14,8 +14,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * A class encapsulating the information a "Ticker" can contain. Some fields can be empty if not
- * provided by the exchange.
+ * 封装“ Ticker”可以包含的信息的类。 如果交易所未提供，则某些字段可以为空。
  *
  * <p>A ticker contains data representing the latest trade.
  */

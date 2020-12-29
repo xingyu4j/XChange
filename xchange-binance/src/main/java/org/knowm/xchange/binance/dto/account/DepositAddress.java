@@ -2,6 +2,9 @@ package org.knowm.xchange.binance.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * @author xingyu
+ */
 public final class DepositAddress {
 
     public String address;

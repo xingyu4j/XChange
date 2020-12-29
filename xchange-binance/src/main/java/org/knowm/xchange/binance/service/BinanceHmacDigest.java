@@ -14,6 +14,9 @@ import java.lang.reflect.Field;
 
 import static org.knowm.xchange.utils.DigestUtils.bytesToHex;
 
+/**
+ * @author 99121
+ */
 public class BinanceHmacDigest extends BaseParamsDigest {
 
     private static final Logger LOG = LoggerFactory.getLogger(BinanceHmacDigest.class);

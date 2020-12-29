@@ -15,6 +15,9 @@ import java.net.SocketException;
 import java.net.UnknownHostException;
 import java.time.Duration;
 
+/**
+ * @author 99121
+ */
 @Beta
 public class ResilienceRegistries {
 
@@ -32,7 +35,7 @@ public class ResilienceRegistries {
     public static final String NON_IDEMPOTENTE_CALLS_RETRY_CONFIG_NAME = "nonIdempotenteCallsBase";
 
     /**
-     * Suggested for calls that are not idemotente like placing order or withrawing funds
+     * 建议用于非确定性的电话，例如下订单或提取资金
      *
      * <p>Well designed exchange APIs will have mechanisms that make even placing orders idemotent.
      * Most however cannot handle retrys on this type of calls and if you do one after a socket read

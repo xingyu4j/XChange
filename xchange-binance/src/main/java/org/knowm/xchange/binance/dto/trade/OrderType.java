@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 /**
  * 订单类型， 比如市价单，现价单等
  *
- * @author 99121
+ * @author xingyu
  */
 
 public enum OrderType {
@@ -33,6 +33,9 @@ public enum OrderType {
      * 止盈单
      */
     TAKE_PROFIT,
+    /**
+     * 限价只挂单
+     */
     LIMIT_MAKER;
 
     @JsonCreator

@@ -12,13 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Binance user data streams must be established by first requesting a unique "listen key" via
- * authenticated REST API, which is then used to create an obscured WS URI (rather than
- * authenticating the web socket). This class handles the initial request for a listen key, but also
- * the 30-minute keepalive REST calls necessary to keep the socket open. It also allows for the
- * possibility that extended downtime might cause the listen key to expire without being able to
- * renew it. In this case, a new listen key is requested and a caller can be alerted via
- * asynchronous callback to re-establish the socket with the new listen key.
+ * 必须首先通过经过身份验证的REST API请求唯一的“侦听密钥”来建立Binance用户数据流，
+ * 然后将其用于创建模糊的WS URI（而不是对Web套接字进行身份验证）。
+ * 此类处理最初对侦听键的请求，但也处理保持套接字打开所必需的30分钟的keepalive REST调用。
+ * 它还考虑到延长的停机时间可能导致侦听密钥过期而无法更新它的可能性。
+ * 在这种情况下，将请求一个新的侦听键，并且可以通过异步回调向调用者发出警报，以使用新的侦听键重新建立套接字。
  *
  * @author Graham Crockford
  */

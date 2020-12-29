@@ -15,6 +15,9 @@ import java.io.IOException;
 
 import static org.knowm.xchange.binance.BinanceResilience.REQUEST_WEIGHT_RATE_LIMITER;
 
+/**
+ * @author 99121
+ */
 public class BinanceBaseService extends BaseResilientExchangeService<BinanceExchange> {
 
     protected final Logger LOG = LoggerFactory.getLogger(getClass());

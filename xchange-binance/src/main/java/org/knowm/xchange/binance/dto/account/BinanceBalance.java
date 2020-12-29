@@ -5,10 +5,22 @@ import org.knowm.xchange.currency.Currency;
 
 import java.math.BigDecimal;
 
+/**
+ * 资产信息
+ * @author xingyu
+ */
 public final class BinanceBalance {
-
+    /**
+     * 交易对
+     */
     private final Currency currency;
+    /**
+     * 账户余额
+     */
     private final BigDecimal free;
+    /**
+     * 锁定中
+     */
     private final BigDecimal locked;
 
     public BinanceBalance(

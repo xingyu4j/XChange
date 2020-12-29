@@ -10,7 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * DTO representing the exchange loan order book
+ * DTO 交易所贷款订单簿
+ * @author 99121
  */
 public final class LoanOrderBook implements Serializable {
 

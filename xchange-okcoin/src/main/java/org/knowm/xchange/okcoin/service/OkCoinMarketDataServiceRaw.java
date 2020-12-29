@@ -35,7 +35,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    *
    * @param currencyPair
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTickerResponse getTicker(CurrencyPair currencyPair) throws IOException {
     return okCoin.getTicker("1", OkCoinAdapters.adaptSymbol(currencyPair));
@@ -47,7 +47,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param prompt
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTickerResponse getFuturesTicker(CurrencyPair currencyPair, FuturesContract prompt)
       throws IOException {
@@ -59,7 +59,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    *
    * @param currencyPair
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinDepth getDepth(CurrencyPair currencyPair) throws IOException {
     return getDepth(currencyPair, null);
@@ -71,7 +71,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param size 设置查询数据条数，[1,200]
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinDepth getDepth(CurrencyPair currencyPair, Integer size) throws IOException {
     size = (size == null || size < 1 || size > 200) ? 200 : size;
@@ -84,7 +84,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param prompt
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinDepth getFuturesDepth(CurrencyPair currencyPair, FuturesContract prompt)
       throws IOException {
@@ -97,7 +97,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    *
    * @param currencyPair
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTrade[] getTrades(CurrencyPair currencyPair) throws IOException {
     return getTrades(currencyPair, null);
@@ -109,7 +109,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param since tid:交易记录ID(返回数据为：最新交易信息tid值--当前tid值之间的交易信息 ,但最多返回60条数据)
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTrade[] getTrades(CurrencyPair currencyPair, Long since) throws IOException {
     return okCoin.getTrades("1", OkCoinAdapters.adaptSymbol(currencyPair), since);
@@ -121,7 +121,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param prompt
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinTrade[] getFuturesTrades(CurrencyPair currencyPair, FuturesContract prompt)
       throws IOException {
@@ -134,7 +134,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    *
    * @param currencyPair
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureComment getFuturesIndex(CurrencyPair currencyPair) throws IOException {
     return okCoin.getFuturesIndex("1", OkCoinAdapters.adaptSymbol(currencyPair));
@@ -143,7 +143,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
   /**
    * @param symbol    交易对 btc_usdt,ltc_usdt,eth_usdt 等
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureComment getFuturesIndex(String symbol) throws IOException {
     return okCoin.getFuturesIndex("1", symbol);
@@ -153,7 +153,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * 获取美元人民币汇率
    *
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureComment getExchangRate_US_CH() throws IOException {
     return okCoin.getExchangRate_US_CH();
@@ -164,7 +164,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    *
    * @param currencyPair
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureComment getFutureEstimatedPrice(CurrencyPair currencyPair) throws IOException {
     return okCoin.getFutureEstimatedPrice("1", OkCoinAdapters.adaptSymbol(currencyPair));
@@ -179,7 +179,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param size
    * @param since
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public List<OkCoinFutureKline> getFutureKline(
       CurrencyPair currencyPair,
@@ -225,7 +225,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param contractType
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureHoldAmount[] getFutureHoldAmount(
       CurrencyPair currencyPair, FuturesContract contractType) throws IOException {
@@ -239,7 +239,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param contractType
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFutureComment getFuturePriceLimit(
       CurrencyPair currencyPair, FuturesContract contractType) throws IOException {
@@ -253,7 +253,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param currencyPair
    * @param type
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public List<OkCoinKline> getKlines(CurrencyPair currencyPair, OkCoinKlineType type)
       throws IOException {
@@ -267,7 +267,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param type
    * @param size 指定获取数据的条数
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public List<OkCoinKline> getKlines(CurrencyPair currencyPair, OkCoinKlineType type, Integer size)
       throws IOException {
@@ -281,7 +281,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param type
    * @param timestamp 指定获取数据的条数
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public List<OkCoinKline> getKlines(
       CurrencyPair currencyPair, OkCoinKlineType type, Long timestamp) throws IOException {
@@ -295,7 +295,7 @@ public class OkCoinMarketDataServiceRaw extends OkCoinBaseService {
    * @param type
    * @param size
    * @param timestamp 返回该时间戳以后的数据
-   * @throws IOException
+   * @throws IOException IOException
    */
   public List<OkCoinKline> getKlines(
       CurrencyPair currencyPair, OkCoinKlineType type, Integer size, Long timestamp)

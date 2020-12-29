@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * DTO representing funding information
+ * DTO 资金信息
  *
  * <p>Funding information contains the detail of deposit/withdrawal transaction for a specific
  * currency

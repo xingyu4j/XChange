@@ -105,7 +105,7 @@ public class OkCoinTradeService extends OkCoinTradeServiceRaw implements TradeSe
    *
    * @param limitOrders
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public String placeBatchLimitOrder(LimitOrder... limitOrders) throws IOException {
     if (limitOrders == null || limitOrders.length < 1) {
@@ -293,7 +293,7 @@ public class OkCoinTradeService extends OkCoinTradeServiceRaw implements TradeSe
    * @param type 查询类型 0:未完成的订单 1:已经完成的订单
    * @param orderIds 多个订单ID中间以","分隔,一次最多允许查询50个订单
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinOrderResult getOrder(String symbol, Integer type, String... orderIds)
       throws IOException {

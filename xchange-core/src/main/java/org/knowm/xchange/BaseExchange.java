@@ -21,6 +21,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author 99121
+ */
 public abstract class BaseExchange implements Exchange {
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());

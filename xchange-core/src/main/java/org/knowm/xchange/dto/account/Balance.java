@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * DTO representing a balance in a currency
+ * DTO 货币余额
  *
  * <p>This is simply defined by an amount of money in a given currency, contained in the cash
  * object.

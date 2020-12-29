@@ -7,6 +7,10 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 资金划转记录
+ * @author xingyu
+ */
 public final class TransferHistoryResponse
         extends WapiResponse<List<TransferHistoryResponse.TransferHistory>> {
 

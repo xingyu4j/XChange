@@ -50,7 +50,7 @@ public interface OkexV3 {
    * @param subAccount optional, sub account name
    * @param instrumentid optional, margin token pair ID, for supported pairs only
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @POST
@@ -143,7 +143,7 @@ public interface OkexV3 {
   /**
    * @param req
    * @return map with instrument_id -> List<OrderCancellationResponse>
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   Map<String, List<OrderCancellationResponse>> spotCancelMultipleOrders(
@@ -164,7 +164,7 @@ public interface OkexV3 {
    *     Filled, "2":Fully Filled,"3":Submitting,"4":Cancelling,"6": Incomplete（open+partially
    *     filled），"7":Complete（cancelled+fully filled））
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET
@@ -201,7 +201,7 @@ public interface OkexV3 {
    *     ledger_id or trade_id of the endpoint, etc.
    * @param limit optional, Number of results per request. Maximum 100. (default 100)
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET
@@ -322,7 +322,7 @@ public interface OkexV3 {
    *     Filled,"3":Submitting,"4":Cancelling,"6": Incomplete（open+partially
    *     filled），"7":Complete（cancelled+fully filled））
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET
@@ -419,7 +419,7 @@ public interface OkexV3 {
    *     "2":Fully Filled,"3":Submitting,"4":Cancelling,"6": Incomplete（open+partially
    *     filled），"7":Complete（cancelled+fully filled））
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET
@@ -599,7 +599,7 @@ public interface OkexV3 {
    *     Filled, "2":Fully Filled,"3":Submitting,"4":Cancelling,"6": Incomplete（open+partially
    *     filled），"7":Complete（cancelled+fully filled））
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET
@@ -625,7 +625,7 @@ public interface OkexV3 {
    *     ledger_id or trade_id of the endpoint, etc.
    * @param limit optional, Number of results per request. Maximum 100. (default 100)
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    * @throws OkexException
    */
   @GET

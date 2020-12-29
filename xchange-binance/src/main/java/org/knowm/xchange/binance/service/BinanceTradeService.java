@@ -239,9 +239,10 @@ public class BinanceTradeService extends BinanceTradeServiceRaw implements Trade
                     endTime = ((TradeHistoryParamsTimeSpan) params).getEndTime().getTime();
                 }
             }
-            if ((fromId != null) && (startTime != null || endTime != null))
+            if ((fromId != null) && (startTime != null || endTime != null)) {
                 throw new ExchangeException(
                         "You should either specify the id from which you get the user trades from or start and end times. If you specify both, Binance will only honour the fromId parameter.");
+            }
             List<BinanceTrade> binanceTrades = super.myTrades(pair, limit, startTime, endTime, fromId);
             List<UserTrade> trades =
                     binanceTrades.stream()

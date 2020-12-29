@@ -7,6 +7,9 @@ import org.knowm.xchange.ExchangeSpecification;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 
+/**
+ * @author 99121
+ */
 public final class ResilienceUtils {
 
     private ResilienceUtils() {
@@ -24,9 +27,7 @@ public final class ResilienceUtils {
             return () -> {
                 try {
                     return callable.call();
-                } catch (IOException e) {
-                    throw e;
-                } catch (RuntimeException e) {
+                } catch (IOException | RuntimeException e) {
                     throw e;
                 } catch (Throwable e) {
                     throw new IllegalStateException(e);

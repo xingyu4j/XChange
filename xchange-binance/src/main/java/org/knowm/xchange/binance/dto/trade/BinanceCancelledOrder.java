@@ -2,6 +2,10 @@ package org.knowm.xchange.binance.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * 撤销订单
+ * @author xingyu
+ */
 public final class BinanceCancelledOrder {
 
     public final String symbol;

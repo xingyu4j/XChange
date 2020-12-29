@@ -5,6 +5,9 @@ import org.knowm.xchange.client.ResilienceRegistries;
 
 import java.time.Duration;
 
+/**
+ * @author xingyu
+ */
 public final class BinanceResilience {
 
     public static final String REQUEST_WEIGHT_RATE_LIMITER = "requestWeight";

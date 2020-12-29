@@ -10,7 +10,7 @@ import java.util.List;
 import static org.knowm.xchange.dto.marketdata.Trades.TradeSortType.SortByID;
 
 /**
- * DTO representing a collection of trades
+ * DTO 交易集合
  */
 public class Trades implements Serializable {
 

@@ -27,7 +27,7 @@ public class OkCoinAccountServiceRaw extends OKCoinBaseTradeService {
    * 获取用户信息
    *
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinUserInfo getUserInfo() throws IOException {
 
@@ -40,7 +40,7 @@ public class OkCoinAccountServiceRaw extends OKCoinBaseTradeService {
    * 获取OKEx合约账户信息(全仓)
    *
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFuturesUserInfoCross getFutureUserInfo() throws IOException {
 
@@ -54,7 +54,7 @@ public class OkCoinAccountServiceRaw extends OKCoinBaseTradeService {
    * 获取逐仓合约账户信息（逐仓）
    *
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   public OkCoinFuturesUserInfoFixed getFuturesUserInfoFixed() throws IOException {
 

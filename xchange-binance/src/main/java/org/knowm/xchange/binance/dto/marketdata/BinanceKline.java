@@ -5,6 +5,10 @@ import org.knowm.xchange.currency.CurrencyPair;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 
+/**
+ * K线
+ * @author xingyu
+ */
 public final class BinanceKline {
 
     private final CurrencyPair pair;

@@ -7,7 +7,7 @@ import org.knowm.xchange.instrument.Instrument;
 import java.io.Serializable;
 
 /**
- * Value object to provide the following to API:
+ * 值对象可向API提供以下内容：
  *
  * <ul>
  *   <li>Provision of major currency symbol pairs (EUR/USD, GBP/USD etc)
@@ -404,9 +404,7 @@ public class CurrencyPair extends Instrument implements Comparable<CurrencyPair>
             return false;
         }
         if (counter == null) {
-            if (other.counter != null) {
-                return false;
-            }
+            return other.counter == null;
         } else if (!counter.equals(other.counter)) {
             return false;
         }

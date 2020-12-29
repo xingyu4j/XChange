@@ -59,7 +59,7 @@ public class HuobiStreamingService extends JsonNettyStreamingService {
    * @param channelName market.$symbol.depth.$type
    * @param args null
    * @return
-   * @throws IOException
+   * @throws IOException IOException
    */
   @Override
   public String getSubscribeMessage(String channelName, Object... args) throws IOException {
