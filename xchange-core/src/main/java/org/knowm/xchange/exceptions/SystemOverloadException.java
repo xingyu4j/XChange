@@ -6,19 +6,19 @@ package org.knowm.xchange.exceptions;
  */
 public class SystemOverloadException extends ExchangeUnavailableException {
 
-  public SystemOverloadException(String message) {
-    super(message);
-  }
+    public SystemOverloadException(String message) {
+        super(message);
+    }
 
-  public SystemOverloadException(Throwable e) {
-    super(e);
-  }
+    public SystemOverloadException(Throwable e) {
+        super(e);
+    }
 
-  public SystemOverloadException(String message, Throwable cause) {
-    super(message, cause);
-  }
+    public SystemOverloadException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
-  public SystemOverloadException() {
-    super("The system is currently overloaded.");
-  }
+    public SystemOverloadException() {
+        super("The system is currently overloaded.");
+    }
 }

@@ -1,11 +1,5 @@
 package org.knowm.xchange.deribit.v2;
 
-import static org.apache.commons.lang3.StringUtils.isNotEmpty;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.deribit.v2.dto.DeribitError;
@@ -24,6 +18,13 @@ import org.knowm.xchange.dto.marketdata.Trades;
 import org.knowm.xchange.dto.trade.LimitOrder;
 import org.knowm.xchange.exceptions.CurrencyPairNotValidException;
 import org.knowm.xchange.exceptions.ExchangeException;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 public class DeribitAdapters {
 

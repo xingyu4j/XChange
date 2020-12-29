@@ -3,9 +3,10 @@ package org.knowm.xchange.utils.jackson;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
+import org.knowm.xchange.utils.DateUtils;
+
 import java.io.IOException;
 import java.util.Date;
-import org.knowm.xchange.utils.DateUtils;
 
 /**
  * Deserializes an ISO formatted Date String to a Java Date ISO format:
@@ -15,9 +16,9 @@ import org.knowm.xchange.utils.DateUtils;
  */
 public class ISODateDeserializer extends JsonDeserializer<Date> {
 
-  @Override
-  public Date deserialize(JsonParser jp, final DeserializationContext ctxt) throws IOException {
+    @Override
+    public Date deserialize(JsonParser jp, final DeserializationContext ctxt) throws IOException {
 
-    return DateUtils.fromISODateString(jp.getValueAsString());
-  }
+        return DateUtils.fromISODateString(jp.getValueAsString());
+    }
 }

@@ -1,11 +1,12 @@
 package org.knowm.xchange.deribit.v2.dto.marketdata;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Test;
+
 import java.io.InputStream;
 import java.math.BigDecimal;
-import org.junit.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DeribitCurrencyTest {
 

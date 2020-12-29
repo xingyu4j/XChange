@@ -1,11 +1,5 @@
 package org.knowm.xchange.huobi.service;
 
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order.OrderType;
@@ -16,12 +10,15 @@ import org.knowm.xchange.huobi.HuobiUtils;
 import org.knowm.xchange.huobi.dto.trade.HuobiCreateOrderRequest;
 import org.knowm.xchange.huobi.dto.trade.HuobiMatchResult;
 import org.knowm.xchange.huobi.dto.trade.HuobiOrder;
-import org.knowm.xchange.huobi.dto.trade.results.HuobiCancelOrderResult;
-import org.knowm.xchange.huobi.dto.trade.results.HuobiMatchesResult;
-import org.knowm.xchange.huobi.dto.trade.results.HuobiOrderInfoResult;
-import org.knowm.xchange.huobi.dto.trade.results.HuobiOrderResult;
-import org.knowm.xchange.huobi.dto.trade.results.HuobiOrdersResult;
+import org.knowm.xchange.huobi.dto.trade.results.*;
 import org.knowm.xchange.service.trade.params.CurrencyPairParam;
+
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 class HuobiTradeServiceRaw extends HuobiBaseService {
   private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");

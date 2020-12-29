@@ -1,11 +1,5 @@
 package org.knowm.xchange.deribit.v2.service;
 
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import javax.crypto.Mac;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import lombok.Getter;
 import org.knowm.xchange.client.ExchangeRestProxyBuilder;
 import org.knowm.xchange.deribit.v2.Deribit;
@@ -21,6 +15,13 @@ import org.knowm.xchange.service.BaseParamsDigest;
 import org.knowm.xchange.service.BaseService;
 import org.knowm.xchange.utils.DigestUtils;
 import si.mazi.rescu.ParamsDigest;
+
+import javax.crypto.Mac;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.io.IOException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 public class DeribitBaseService extends BaseExchangeService<DeribitExchange>
     implements BaseService {

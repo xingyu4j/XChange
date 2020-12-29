@@ -11,10 +11,10 @@ import lombok.Data;
 @JsonInclude(Include.NON_NULL)
 public class OrderCancellationRequest {
 
-  /**
-   * required By providing this parameter, the corresponding order of a designated trading pair will
-   * be cancelled. If not providing this parameter, it will be back to error code.
-   */
-  @JsonProperty("instrument_id")
-  private String instrumentId;
+    /**
+     * required By providing this parameter, the corresponding order of a designated trading pair will
+     * be cancelled. If not providing this parameter, it will be back to error code.
+     */
+    @JsonProperty("instrument_id")
+    private String instrumentId;
 }

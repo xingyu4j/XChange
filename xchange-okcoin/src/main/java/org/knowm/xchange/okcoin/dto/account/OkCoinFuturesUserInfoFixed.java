@@ -1,9 +1,10 @@
 package org.knowm.xchange.okcoin.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Map;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.okcoin.dto.trade.OkCoinErrorResult;
+
+import java.util.Map;
 
 public class OkCoinFuturesUserInfoFixed extends OkCoinErrorResult {
   private final Map<Currency, OkcoinFuturesFundsFixed> info;

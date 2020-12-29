@@ -2,18 +2,19 @@ package org.knowm.xchange.service.trade.params;
 
 public class DefaultCancelOrderParamId implements CancelOrderByIdParams {
 
-  private String orderId;
+    private String orderId;
 
-  public DefaultCancelOrderParamId() {}
+    public DefaultCancelOrderParamId() {
+    }
 
-  public DefaultCancelOrderParamId(String orderId) {
+    public DefaultCancelOrderParamId(String orderId) {
 
-    this.orderId = orderId;
-  }
+        this.orderId = orderId;
+    }
 
-  @Override
-  public String getOrderId() {
+    @Override
+    public String getOrderId() {
 
-    return orderId;
-  }
+        return orderId;
+    }
 }

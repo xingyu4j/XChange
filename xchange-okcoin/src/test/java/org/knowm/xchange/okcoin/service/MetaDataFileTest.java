@@ -1,9 +1,5 @@
 package org.knowm.xchange.okcoin.service;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.stream.Collectors;
 import org.junit.Test;
 import org.knowm.xchange.BaseExchange;
 import org.knowm.xchange.Exchange;
@@ -12,6 +8,11 @@ import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.okcoin.OkCoinExchange;
 import org.knowm.xchange.service.BaseExchangeService;
 import org.knowm.xchange.utils.Assert;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.stream.Collectors;
 
 public class MetaDataFileTest {
   @Test

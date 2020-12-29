@@ -1,11 +1,12 @@
 package org.knowm.xchange.okcoin.v3.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.math.BigDecimal;
-import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.knowm.xchange.okcoin.v3.dto.MarginMode;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = false)

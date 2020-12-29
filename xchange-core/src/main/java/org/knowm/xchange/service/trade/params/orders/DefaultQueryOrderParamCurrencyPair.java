@@ -3,26 +3,26 @@ package org.knowm.xchange.service.trade.params.orders;
 import org.knowm.xchange.currency.CurrencyPair;
 
 public class DefaultQueryOrderParamCurrencyPair extends DefaultQueryOrderParam
-    implements OrderQueryParamCurrencyPair {
+        implements OrderQueryParamCurrencyPair {
 
-  private CurrencyPair pair;
+    private CurrencyPair pair;
 
-  public DefaultQueryOrderParamCurrencyPair() {
-    super();
-  }
+    public DefaultQueryOrderParamCurrencyPair() {
+        super();
+    }
 
-  public DefaultQueryOrderParamCurrencyPair(CurrencyPair pair, String orderId) {
-    super(orderId);
-    this.pair = pair;
-  }
+    public DefaultQueryOrderParamCurrencyPair(CurrencyPair pair, String orderId) {
+        super(orderId);
+        this.pair = pair;
+    }
 
-  @Override
-  public CurrencyPair getCurrencyPair() {
-    return pair;
-  }
+    @Override
+    public CurrencyPair getCurrencyPair() {
+        return pair;
+    }
 
-  @Override
-  public void setCurrencyPair(CurrencyPair currencyPair) {
-    pair = currencyPair;
-  }
+    @Override
+    public void setCurrencyPair(CurrencyPair currencyPair) {
+        pair = currencyPair;
+    }
 }

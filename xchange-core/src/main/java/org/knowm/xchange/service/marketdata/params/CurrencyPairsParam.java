@@ -1,9 +1,10 @@
 package org.knowm.xchange.service.marketdata.params;
 
-import java.util.Collection;
 import org.knowm.xchange.currency.CurrencyPair;
+
+import java.util.Collection;
 
 public interface CurrencyPairsParam extends Params {
 
-  Collection<CurrencyPair> getCurrencyPairs();
+    Collection<CurrencyPair> getCurrencyPairs();
 }

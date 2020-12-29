@@ -10,23 +10,23 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarginRepaymentRequest {
 
-  @JsonProperty("borrow_id")
-  private String borrowId;
+    @JsonProperty("borrow_id")
+    private String borrowId;
 
-  @JsonProperty("instrument_id")
-  private String instrument_id;
+    @JsonProperty("instrument_id")
+    private String instrument_id;
 
-  @JsonProperty("currency")
-  private String currency;
+    @JsonProperty("currency")
+    private String currency;
 
-  @JsonProperty("amount")
-  private String amount;
+    @JsonProperty("amount")
+    private String amount;
 
-  public MarginRepaymentRequest(
-      String borrowId, String instrument_id, String currency, String amount) {
-    this.borrowId = borrowId;
-    this.instrument_id = instrument_id;
-    this.currency = currency;
-    this.amount = amount;
-  }
+    public MarginRepaymentRequest(
+            String borrowId, String instrument_id, String currency, String amount) {
+        this.borrowId = borrowId;
+        this.instrument_id = instrument_id;
+        this.currency = currency;
+        this.amount = amount;
+    }
 }

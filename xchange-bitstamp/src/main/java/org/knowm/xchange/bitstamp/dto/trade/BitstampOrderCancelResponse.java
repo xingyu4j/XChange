@@ -1,6 +1,7 @@
 package org.knowm.xchange.bitstamp.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 
 public class BitstampOrderCancelResponse {

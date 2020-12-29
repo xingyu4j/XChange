@@ -6,15 +6,15 @@ package org.knowm.xchange.exceptions;
  */
 public class OrderAmountUnderMinimumException extends OrderNotValidException {
 
-  public OrderAmountUnderMinimumException() {
-    super("Orders amount under minimum");
-  }
+    public OrderAmountUnderMinimumException() {
+        super("Orders amount under minimum");
+    }
 
-  public OrderAmountUnderMinimumException(String message) {
-    super(message);
-  }
+    public OrderAmountUnderMinimumException(String message) {
+        super(message);
+    }
 
-  public OrderAmountUnderMinimumException(String message, Throwable cause) {
-    super(message, cause);
-  }
+    public OrderAmountUnderMinimumException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

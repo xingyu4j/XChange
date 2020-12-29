@@ -1,19 +1,12 @@
 package org.knowm.xchange.deribit.v2.service;
 
+import org.knowm.xchange.deribit.v2.DeribitExchange;
+import org.knowm.xchange.deribit.v2.dto.trade.*;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import org.knowm.xchange.deribit.v2.DeribitExchange;
-import org.knowm.xchange.deribit.v2.dto.trade.AdvancedOptions;
-import org.knowm.xchange.deribit.v2.dto.trade.Order;
-import org.knowm.xchange.deribit.v2.dto.trade.OrderPlacement;
-import org.knowm.xchange.deribit.v2.dto.trade.OrderType;
-import org.knowm.xchange.deribit.v2.dto.trade.SettlementType;
-import org.knowm.xchange.deribit.v2.dto.trade.TimeInForce;
-import org.knowm.xchange.deribit.v2.dto.trade.Trigger;
-import org.knowm.xchange.deribit.v2.dto.trade.UserSettlements;
-import org.knowm.xchange.deribit.v2.dto.trade.UserTrades;
 
 public class DeribitTradeServiceRaw extends DeribitBaseService {
 

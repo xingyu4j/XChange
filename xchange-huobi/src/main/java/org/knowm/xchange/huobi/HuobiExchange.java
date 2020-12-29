@@ -1,6 +1,5 @@
 package org.knowm.xchange.huobi;
 
-import java.io.IOException;
 import org.knowm.xchange.BaseExchange;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.ExchangeSpecification;
@@ -11,6 +10,8 @@ import org.knowm.xchange.huobi.service.HuobiAccountService;
 import org.knowm.xchange.huobi.service.HuobiMarketDataService;
 import org.knowm.xchange.huobi.service.HuobiMarketDataServiceRaw;
 import org.knowm.xchange.huobi.service.HuobiTradeService;
+
+import java.io.IOException;
 
 public class HuobiExchange extends BaseExchange implements Exchange {
 

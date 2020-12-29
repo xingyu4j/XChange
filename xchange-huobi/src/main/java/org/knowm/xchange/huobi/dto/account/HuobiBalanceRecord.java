@@ -1,6 +1,7 @@
 package org.knowm.xchange.huobi.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 
 public class HuobiBalanceRecord {

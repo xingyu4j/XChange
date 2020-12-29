@@ -1,7 +1,5 @@
 package org.knowm.xchange.okcoin;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order.OrderType;
@@ -24,6 +22,9 @@ import org.knowm.xchange.okcoin.v3.dto.trade.FuturesAccountsResponse.FuturesAcco
 import org.knowm.xchange.okcoin.v3.dto.trade.OkexOpenOrder;
 import org.knowm.xchange.okcoin.v3.dto.trade.Side;
 import org.knowm.xchange.okcoin.v3.dto.trade.SwapAccountsResponse.SwapAccountInfo;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class OkexAdaptersV3 {
 

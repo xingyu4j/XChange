@@ -1,21 +1,17 @@
 package org.knowm.xchange.okcoin.service;
 
-import java.io.IOException;
-import java.util.Set;
-import java.util.stream.Collectors;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.okcoin.FuturesContract;
 import org.knowm.xchange.okcoin.OkCoinAdapters;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinFuturesOrderResult;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinFuturesTradeHistoryResult;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinOrderResult;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinPositionResult;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinPriceLimit;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinTradeResult;
+import org.knowm.xchange.okcoin.dto.trade.*;
 import org.knowm.xchange.okcoin.dto.trade.result.OkCoinBatchTradeResult;
 import org.knowm.xchange.okcoin.dto.trade.result.OkCoinFutureExplosiveResult;
 import org.knowm.xchange.okcoin.dto.trade.result.OkCoinMoreTradeResult;
+
+import java.io.IOException;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
 
@@ -34,7 +30,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 下单交易
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param type
    * @param price
    * @param amount (只能是整数)
@@ -65,7 +61,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 批量下单
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param type 限价单(buy/sell)
    * @param ordersData "[{price:3,amount:5,type:'sell'},{price:3,amount:3,type:'buy'}]"
    *     最终买卖类型由orders_data 中type 为准，如orders_data不设定type 则由上面type设置为准。 若，上面type没有设置，orderData
@@ -84,7 +80,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 单笔订单取消
    *
    * @param orderId
-   * @param symbol
+   * @param symbol    交易对
    * @return
    * @throws IOException
    */
@@ -98,7 +94,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 多笔订单取消 一次最多取消三个订单
    *
    * @param orderIds
-   * @param symbol
+   * @param symbol    交易对
    * @return
    * @throws IOException
    */
@@ -112,7 +108,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 获取用户的未完成的订单信息
    *
-   * @param symbol
+   * @param symbol    交易对
    * @return
    * @throws IOException
    */
@@ -124,7 +120,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 获取用户的订单信息
    *
    * @param orderId
-   * @param symbol
+   * @param symbol    交易对
    * @return
    * @throws IOException
    */
@@ -137,7 +133,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 批量获取用户订单
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param type 查询类型 0:未完成的订单 1:已经完成的订单
    * @param orderIds
    * @return
@@ -153,7 +149,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 获取历史订单信息，只返回最近两天的信息
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param status
    * @param currentPage
    * @param pageLength
@@ -172,7 +168,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 合约下单
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param type
    * @param price
    * @param amount
@@ -210,7 +206,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 取消合约订单(单个取消，多个取消没有实现处理)
    *
    * @param orderId
-   * @param symbol
+   * @param symbol    交易对
    * @param contract
    * @return
    * @throws IOException
@@ -228,7 +224,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 获取合约订单信息
    *
    * @param orderId
-   * @param symbol
+   * @param symbol    交易对
    * @param currentPage
    * @param pageLength
    * @param contract
@@ -279,7 +275,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
    * 批量获取合约订单信息
    *
    * @param orderIds
-   * @param symbol
+   * @param symbol    交易对
    * @param contract
    * @return
    * @throws IOException
@@ -295,7 +291,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 获取OKEX合约交易历史（非个人）
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param since
    * @param date
    * @return
@@ -312,7 +308,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   /**
    * 获取用户持仓获取OKEX合约账户信息 （全仓）
    *
-   * @param symbol
+   * @param symbol    交易对
    * @param contract
    * @return
    * @throws IOException
@@ -334,7 +330,7 @@ public class OkCoinTradeServiceRaw extends OKCoinBaseTradeService {
   }
 
   /**
-   * @param symbol
+   * @param symbol    交易对
    * @param contractType
    * @param ordersData
    * @param leverRate

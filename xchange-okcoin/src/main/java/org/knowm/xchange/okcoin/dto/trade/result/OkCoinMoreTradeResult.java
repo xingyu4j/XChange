@@ -1,9 +1,10 @@
 package org.knowm.xchange.okcoin.dto.trade.result;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.okcoin.dto.trade.OkCoinErrorResult;
+
 import java.util.List;
 import java.util.Map;
-import org.knowm.xchange.okcoin.dto.trade.OkCoinErrorResult;
 
 public class OkCoinMoreTradeResult extends OkCoinErrorResult {
 

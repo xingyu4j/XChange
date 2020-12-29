@@ -1,10 +1,11 @@
 package org.knowm.xchange.deribit.v2.service;
 
-import java.io.IOException;
 import org.knowm.xchange.deribit.v2.DeribitExchange;
 import org.knowm.xchange.deribit.v2.dto.trade.Order;
 import org.knowm.xchange.deribit.v2.dto.trade.OrderState;
 import org.knowm.xchange.service.trade.TradeService;
+
+import java.io.IOException;
 
 public class DeribitTradeService extends DeribitTradeServiceRaw implements TradeService {
 

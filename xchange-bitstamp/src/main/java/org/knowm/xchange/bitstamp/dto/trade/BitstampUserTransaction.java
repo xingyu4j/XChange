@@ -3,13 +3,14 @@ package org.knowm.xchange.bitstamp.dto.trade;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.bitstamp.BitstampUtils;
+import org.knowm.xchange.currency.Currency;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import org.knowm.xchange.bitstamp.BitstampUtils;
-import org.knowm.xchange.currency.Currency;
 
 /** @author Matija Mazi */
 public final class BitstampUserTransaction {

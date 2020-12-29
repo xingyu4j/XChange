@@ -10,13 +10,13 @@ import lombok.AllArgsConstructor;
  */
 @AllArgsConstructor
 public enum FuturesSwapMatchPrice {
-  best_counter_party_price_no("0"),
-  best_counter_party_price_yes("1");
+    best_counter_party_price_no("0"),
+    best_counter_party_price_yes("1");
 
-  private final String value;
+    private final String value;
 
-  @JsonValue
-  public String getValue() {
-    return value;
-  }
+    @JsonValue
+    public String getValue() {
+        return value;
+    }
 }

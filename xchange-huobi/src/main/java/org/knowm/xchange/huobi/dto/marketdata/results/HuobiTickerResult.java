@@ -2,9 +2,10 @@ package org.knowm.xchange.huobi.dto.marketdata.results;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.Date;
 import org.knowm.xchange.huobi.dto.HuobiResult;
 import org.knowm.xchange.huobi.dto.marketdata.HuobiTicker;
+
+import java.util.Date;
 
 public class HuobiTickerResult extends HuobiResult<HuobiTicker> {
 

@@ -10,15 +10,15 @@ package org.knowm.xchange.exceptions;
  */
 public class OperationTimeoutException extends OrderNotValidException {
 
-  public OperationTimeoutException() {
-    super("Operation took to long and the exchange decided to timeout it");
-  }
+    public OperationTimeoutException() {
+        super("Operation took to long and the exchange decided to timeout it");
+    }
 
-  public OperationTimeoutException(String message) {
-    super(message);
-  }
+    public OperationTimeoutException(String message) {
+        super(message);
+    }
 
-  public OperationTimeoutException(String message, Throwable cause) {
-    super(message, cause);
-  }
+    public OperationTimeoutException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

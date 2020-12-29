@@ -2,6 +2,7 @@ package org.knowm.xchange.bitstamp.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.HashMap;

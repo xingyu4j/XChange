@@ -1,45 +1,48 @@
 package org.knowm.xchange.service.trade.params.orders;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.instrument.Instrument;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DefaultOpenOrdersParamInstrument implements OpenOrdersParamInstrument {
 
-  private Instrument instrument;
+    private Instrument instrument;
 
-  public DefaultOpenOrdersParamInstrument() {}
-
-  public DefaultOpenOrdersParamInstrument(CurrencyPair instrument) {
-    this.instrument = instrument;
-  }
-
-  public static List<Instrument> getInstruments(OpenOrdersParams params, Exchange exchange) {
-    List<Instrument> instruments = new ArrayList<>();
-    if (params instanceof OpenOrdersParamInstrument) {
-      final Instrument paramsInst = ((OpenOrdersParamInstrument) params).getInstrument();
-      if (paramsInst != null) {
-        instruments.add(paramsInst);
-      }
+    public DefaultOpenOrdersParamInstrument() {
     }
-    if (instruments.isEmpty()) {
-      instruments = exchange.getExchangeInstruments();
+
+    public DefaultOpenOrdersParamInstrument(CurrencyPair instrument) {
+        this.instrument = instrument;
     }
-    return instruments;
-  }
 
-  @Override
-  public Instrument getInstrument() {
-    return null;
-  }
+    public static List<Instrument> getInstruments(OpenOrdersParams params, Exchange exchange) {
+        List<Instrument> instruments = new ArrayList<>();
+        if (params instanceof OpenOrdersParamInstrument) {
+            final Instrument paramsInst = ((OpenOrdersParamInstrument) params).getInstrument();
+            if (paramsInst != null) {
+                instruments.add(paramsInst);
+            }
+        }
+        if (instruments.isEmpty()) {
+            instruments = exchange.getExchangeInstruments();
+        }
+        return instruments;
+    }
 
-  @Override
-  public void setInstrument(final Instrument instrument) {}
+    @Override
+    public Instrument getInstrument() {
+        return null;
+    }
 
-  @Override
-  public String toString() {
-    return String.format("DefaultOpenOrdersParamInstrument{%s}", instrument);
-  }
+    @Override
+    public void setInstrument(final Instrument instrument) {
+    }
+
+    @Override
+    public String toString() {
+        return String.format("DefaultOpenOrdersParamInstrument{%s}", instrument);
+    }
 }

@@ -9,19 +9,21 @@ package org.knowm.xchange.exceptions;
  */
 public class NotAvailableFromExchangeException extends UnsupportedOperationException {
 
-  /**
-   * Constructor
-   *
-   * @param message Message
-   */
-  public NotAvailableFromExchangeException(String message) {
+    /**
+     * Constructor
+     *
+     * @param message Message
+     */
+    public NotAvailableFromExchangeException(String message) {
 
-    super(message);
-  }
+        super(message);
+    }
 
-  /** Constructor */
-  public NotAvailableFromExchangeException() {
+    /**
+     * Constructor
+     */
+    public NotAvailableFromExchangeException() {
 
-    this("Requested Information or function from Exchange is not available.");
-  }
+        this("Requested Information or function from Exchange is not available.");
+    }
 }

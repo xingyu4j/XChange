@@ -1,14 +1,11 @@
 package org.knowm.xchange.okcoin.service;
 
-import java.io.IOException;
-import java.math.BigDecimal;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.exceptions.ExchangeException;
-import org.knowm.xchange.okcoin.dto.account.OKCoinWithdraw;
-import org.knowm.xchange.okcoin.dto.account.OkCoinAccountRecords;
-import org.knowm.xchange.okcoin.dto.account.OkCoinFuturesUserInfoCross;
-import org.knowm.xchange.okcoin.dto.account.OkCoinFuturesUserInfoFixed;
-import org.knowm.xchange.okcoin.dto.account.OkCoinUserInfo;
+import org.knowm.xchange.okcoin.dto.account.*;
+
+import java.io.IOException;
+import java.math.BigDecimal;
 
 public class OkCoinAccountServiceRaw extends OKCoinBaseTradeService {
   private final String tradepwd;

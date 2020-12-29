@@ -4,23 +4,24 @@ import org.knowm.xchange.currency.CurrencyPair;
 
 public class DefaultTradeHistoryParamCurrencyPair implements TradeHistoryParamCurrencyPair {
 
-  private CurrencyPair pair;
+    private CurrencyPair pair;
 
-  public DefaultTradeHistoryParamCurrencyPair() {}
+    public DefaultTradeHistoryParamCurrencyPair() {
+    }
 
-  public DefaultTradeHistoryParamCurrencyPair(CurrencyPair pair) {
-    this.pair = pair;
-  }
+    public DefaultTradeHistoryParamCurrencyPair(CurrencyPair pair) {
+        this.pair = pair;
+    }
 
-  @Override
-  public CurrencyPair getCurrencyPair() {
+    @Override
+    public CurrencyPair getCurrencyPair() {
 
-    return pair;
-  }
+        return pair;
+    }
 
-  @Override
-  public void setCurrencyPair(CurrencyPair pair) {
+    @Override
+    public void setCurrencyPair(CurrencyPair pair) {
 
-    this.pair = pair;
-  }
+        this.pair = pair;
+    }
 }

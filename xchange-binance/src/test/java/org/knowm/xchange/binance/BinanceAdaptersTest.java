@@ -1,8 +1,5 @@
 package org.knowm.xchange.binance;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.math.BigDecimal;
 import org.junit.Test;
 import org.knowm.xchange.binance.dto.account.AssetDividendResponse;
 import org.knowm.xchange.binance.dto.trade.BinanceOrder;
@@ -10,6 +7,10 @@ import org.knowm.xchange.binance.service.BinanceTradeService.BinanceOrderFlags;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.trade.MarketOrder;
 import org.knowm.xchange.utils.ObjectMapperHelper;
+
+import java.math.BigDecimal;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BinanceAdaptersTest {
 

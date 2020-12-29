@@ -1,9 +1,10 @@
 package org.knowm.xchange.dto.trade;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import org.knowm.xchange.dto.LoanOrder;
 import org.knowm.xchange.dto.Order.OrderType;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * DTO representing a fixed rate loan order A fixed rate loan order lets you specify a fixed rate
@@ -13,79 +14,83 @@ import org.knowm.xchange.dto.Order.OrderType;
  */
 public final class FixedRateLoanOrder extends LoanOrder implements Comparable<FixedRateLoanOrder> {
 
-  private static final long serialVersionUID = 2627042395091155053L;
+    private static final long serialVersionUID = 2627042395091155053L;
 
-  /** The fixed rate of return for a day */
-  private final BigDecimal rate;
+    /**
+     * The fixed rate of return for a day
+     */
+    private final BigDecimal rate;
 
-  /**
-   * @param type Either BID (debtor) or ASK (creditor)
-   * @param currency The loan currency code
-   * @param originalAmount Units of currency
-   * @param dayPeriod Loan duration in days
-   * @param id An id (usually provided by the exchange)
-   * @param timestamp The absolute time for this order
-   * @param rate The fixed rate of return for a day
-   */
-  public FixedRateLoanOrder(
-      OrderType type,
-      String currency,
-      BigDecimal originalAmount,
-      int dayPeriod,
-      String id,
-      Date timestamp,
-      BigDecimal rate) {
+    /**
+     * @param type           Either BID (debtor) or ASK (creditor)
+     * @param currency       The loan currency code
+     * @param originalAmount Units of currency
+     * @param dayPeriod      Loan duration in days
+     * @param id             An id (usually provided by the exchange)
+     * @param timestamp      The absolute time for this order
+     * @param rate           The fixed rate of return for a day
+     */
+    public FixedRateLoanOrder(
+            OrderType type,
+            String currency,
+            BigDecimal originalAmount,
+            int dayPeriod,
+            String id,
+            Date timestamp,
+            BigDecimal rate) {
 
-    super(type, currency, originalAmount, dayPeriod, id, timestamp);
+        super(type, currency, originalAmount, dayPeriod, id, timestamp);
 
-    this.rate = rate;
-  }
-
-  /** @return The fixed rate of return for a day */
-  public BigDecimal getRate() {
-
-    return rate;
-  }
-
-  @Override
-  public int compareTo(FixedRateLoanOrder fixedRateLoanOrder) {
-
-    if (!this.getRate().equals(fixedRateLoanOrder.getRate())) {
-      return this.getRate().compareTo(fixedRateLoanOrder.getRate());
-    } else {
-      return this.getDayPeriod() - fixedRateLoanOrder.getDayPeriod();
+        this.rate = rate;
     }
-  }
 
-  @Override
-  public int hashCode() {
+    /**
+     * @return The fixed rate of return for a day
+     */
+    public BigDecimal getRate() {
 
-    final int prime = 31;
-    int result = super.hashCode();
-    result = prime * result + ((rate == null) ? 0 : rate.hashCode());
-    return result;
-  }
+        return rate;
+    }
 
-  @Override
-  public boolean equals(Object obj) {
+    @Override
+    public int compareTo(FixedRateLoanOrder fixedRateLoanOrder) {
 
-    if (this == obj) {
-      return true;
+        if (!this.getRate().equals(fixedRateLoanOrder.getRate())) {
+            return this.getRate().compareTo(fixedRateLoanOrder.getRate());
+        } else {
+            return this.getDayPeriod() - fixedRateLoanOrder.getDayPeriod();
+        }
     }
-    if (!super.equals(obj)) {
-      return false;
+
+    @Override
+    public int hashCode() {
+
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((rate == null) ? 0 : rate.hashCode());
+        return result;
     }
-    if (getClass() != obj.getClass()) {
-      return false;
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (this == obj) {
+            return true;
+        }
+        if (!super.equals(obj)) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        FixedRateLoanOrder other = (FixedRateLoanOrder) obj;
+        if (rate == null) {
+            if (other.rate != null) {
+                return false;
+            }
+        } else if (!rate.equals(other.rate)) {
+            return false;
+        }
+        return true;
     }
-    FixedRateLoanOrder other = (FixedRateLoanOrder) obj;
-    if (rate == null) {
-      if (other.rate != null) {
-        return false;
-      }
-    } else if (!rate.equals(other.rate)) {
-      return false;
-    }
-    return true;
-  }
 }

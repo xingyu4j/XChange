@@ -1,11 +1,12 @@
 package org.knowm.xchange.deribit.v2.service;
 
-import java.io.IOException;
-import java.util.List;
 import org.knowm.xchange.deribit.v2.DeribitExchange;
 import org.knowm.xchange.deribit.v2.dto.Kind;
 import org.knowm.xchange.deribit.v2.dto.account.AccountSummary;
 import org.knowm.xchange.deribit.v2.dto.account.Position;
+
+import java.io.IOException;
+import java.util.List;
 
 public class DeribitAccountServiceRaw extends DeribitBaseService {
 

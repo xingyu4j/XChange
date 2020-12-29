@@ -1,9 +1,10 @@
 package org.knowm.xchange.deribit.v2.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.math.BigDecimal;
 import lombok.Data;
 import org.knowm.xchange.deribit.v2.dto.Direction;
+
+import java.math.BigDecimal;
 
 @Data
 public class Order {

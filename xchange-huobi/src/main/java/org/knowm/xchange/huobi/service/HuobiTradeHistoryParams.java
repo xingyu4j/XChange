@@ -1,11 +1,12 @@
 package org.knowm.xchange.huobi.service;
 
-import java.util.Date;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.exceptions.NotAvailableFromExchangeException;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamCurrencyPair;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamsIdSpan;
 import org.knowm.xchange.service.trade.params.TradeHistoryParamsTimeSpan;
+
+import java.util.Date;
 
 public class HuobiTradeHistoryParams
     implements TradeHistoryParamCurrencyPair, TradeHistoryParamsIdSpan, TradeHistoryParamsTimeSpan {

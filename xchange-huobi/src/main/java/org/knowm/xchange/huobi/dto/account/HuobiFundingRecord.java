@@ -1,9 +1,10 @@
 package org.knowm.xchange.huobi.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.dto.account.FundingRecord;
+
 import java.math.BigDecimal;
 import java.util.Date;
-import org.knowm.xchange.dto.account.FundingRecord;
 
 public class HuobiFundingRecord {
 

@@ -4,10 +4,11 @@ import org.knowm.xchange.dto.trade.LimitOrder;
 
 public class DefaultOpenOrdersParam implements OpenOrdersParams {
 
-  public DefaultOpenOrdersParam() {}
+    public DefaultOpenOrdersParam() {
+    }
 
-  @Override
-  public boolean accept(LimitOrder order) {
-    return order != null;
-  }
+    @Override
+    public boolean accept(LimitOrder order) {
+        return order != null;
+    }
 }

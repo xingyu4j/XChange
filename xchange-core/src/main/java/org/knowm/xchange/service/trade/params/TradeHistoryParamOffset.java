@@ -2,7 +2,7 @@ package org.knowm.xchange.service.trade.params;
 
 public interface TradeHistoryParamOffset extends TradeHistoryParams {
 
-  Long getOffset();
+    Long getOffset();
 
-  void setOffset(Long offset);
+    void setOffset(Long offset);
 }

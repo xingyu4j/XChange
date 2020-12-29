@@ -1,33 +1,14 @@
 package org.knowm.xchange.okcoin.v3.service;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.okcoin.OkexAdaptersV3;
 import org.knowm.xchange.okcoin.OkexExchangeV3;
 import org.knowm.xchange.okcoin.v3.dto.account.FuturesLeverageResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.FuturesMultipleOrderCancellationResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.FuturesMultipleOrderPlacementRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.FuturesOpenOrdersResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.FuturesOrderPlacementRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexFuturesOpenOrder;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexFuturesTransaction;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexOpenOrder;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexSwapOpenOrder;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexSwapTransaction;
-import org.knowm.xchange.okcoin.v3.dto.trade.OkexTransaction;
-import org.knowm.xchange.okcoin.v3.dto.trade.OrderBatchCancellationRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.OrderCancellationRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.OrderCancellationResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.OrderPlacementResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.SpotOrderPlacementRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapFuturesMultipleOrderPlacementResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapMultipleOrderCancellationResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapMultipleOrderPlacementRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapOpenOrdersResponse;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapOrderBatchCancellationRequest;
-import org.knowm.xchange.okcoin.v3.dto.trade.SwapOrderPlacementRequest;
+import org.knowm.xchange.okcoin.v3.dto.trade.*;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public class OkexTradeServiceRaw extends OkexBaseService {
 

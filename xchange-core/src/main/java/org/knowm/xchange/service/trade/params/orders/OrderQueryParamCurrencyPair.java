@@ -4,7 +4,7 @@ import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.service.trade.params.CurrencyPairParam;
 
 public interface OrderQueryParamCurrencyPair extends OrderQueryParams, CurrencyPairParam {
-  CurrencyPair getCurrencyPair();
+    CurrencyPair getCurrencyPair();
 
-  void setCurrencyPair(CurrencyPair currencyPair);
+    void setCurrencyPair(CurrencyPair currencyPair);
 }

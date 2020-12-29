@@ -1,13 +1,14 @@
 package org.knowm.xchange.deribit.v2.service;
 
-import java.io.UnsupportedEncodingException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.knowm.xchange.exceptions.ExchangeException;
 import org.knowm.xchange.service.BaseParamsDigest;
 import org.knowm.xchange.utils.DigestUtils;
 import si.mazi.rescu.RestInvocation;
 import si.mazi.rescu.SynchronizedValueFactory;
+
+import java.io.UnsupportedEncodingException;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DeribitAuth extends BaseParamsDigest {
   private final String clientId;

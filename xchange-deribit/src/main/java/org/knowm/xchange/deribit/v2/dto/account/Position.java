@@ -1,10 +1,11 @@
 package org.knowm.xchange.deribit.v2.dto.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.math.BigDecimal;
 import lombok.Data;
 import org.knowm.xchange.deribit.v2.dto.Direction;
 import org.knowm.xchange.deribit.v2.dto.Kind;
+
+import java.math.BigDecimal;
 
 @Data
 public class Position {

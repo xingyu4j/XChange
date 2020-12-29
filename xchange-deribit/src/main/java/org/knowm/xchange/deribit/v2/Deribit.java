@@ -1,23 +1,19 @@
 package org.knowm.xchange.deribit.v2;
 
-import java.io.IOException;
-import java.util.List;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
 import org.knowm.xchange.deribit.v2.dto.DeribitException;
 import org.knowm.xchange.deribit.v2.dto.DeribitResponse;
 import org.knowm.xchange.deribit.v2.dto.GrantType;
 import org.knowm.xchange.deribit.v2.dto.Kind;
 import org.knowm.xchange.deribit.v2.dto.account.DeribitAuthentication;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitCurrency;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitInstrument;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitOrderBook;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitSummary;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitTicker;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitTrades;
+import org.knowm.xchange.deribit.v2.dto.marketdata.*;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.util.List;
 
 @Path("/api/v2/public")
 @Produces(MediaType.APPLICATION_JSON)

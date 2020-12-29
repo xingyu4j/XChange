@@ -2,9 +2,10 @@ package org.knowm.xchange.deribit.v2.dto.marketdata;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
 import java.math.BigDecimal;
 import java.util.Date;
-import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data

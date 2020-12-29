@@ -2,12 +2,13 @@ package org.knowm.xchange.dto.meta;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Map;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.utils.ObjectMapperHelper;
+
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  * This class is loaded during creation of the Exchange and is intended to hold both data that is
@@ -21,104 +22,104 @@ import org.knowm.xchange.utils.ObjectMapperHelper;
  */
 public class ExchangeMetaData implements Serializable {
 
-  private static final long serialVersionUID = -1495610469981534977L;
+    private static final long serialVersionUID = -1495610469981534977L;
 
-  @JsonProperty("currency_pairs")
-  private Map<CurrencyPair, CurrencyPairMetaData> currencyPairs;
+    @JsonProperty("currency_pairs")
+    private Map<CurrencyPair, CurrencyPairMetaData> currencyPairs;
 
-  @JsonProperty("currencies")
-  private Map<Currency, CurrencyMetaData> currencies;
+    @JsonProperty("currencies")
+    private Map<Currency, CurrencyMetaData> currencies;
 
-  @JsonProperty("public_rate_limits")
-  private RateLimit[] publicRateLimits;
+    @JsonProperty("public_rate_limits")
+    private RateLimit[] publicRateLimits;
 
-  @JsonProperty("private_rate_limits")
-  private RateLimit[] privateRateLimits;
+    @JsonProperty("private_rate_limits")
+    private RateLimit[] privateRateLimits;
 
-  /**
-   * If true, both public and private calls use single rate limit policy, which is described in
-   * {@link #privateRateLimits}.
-   */
-  @JsonProperty("share_rate_limits")
-  private boolean shareRateLimits = true;
+    /**
+     * If true, both public and private calls use single rate limit policy, which is described in
+     * {@link #privateRateLimits}.
+     */
+    @JsonProperty("share_rate_limits")
+    private boolean shareRateLimits = true;
 
-  /**
-   * Constructor
-   *
-   * @param currencyPairs Map of {@link CurrencyPair} -> {@link CurrencyPairMetaData}
-   * @param currency Map of currency -> {@link CurrencyMetaData}
-   */
-  public ExchangeMetaData(
-      @JsonProperty("currency_pairs") Map<CurrencyPair, CurrencyPairMetaData> currencyPairs,
-      @JsonProperty("currencies") Map<Currency, CurrencyMetaData> currency,
-      @JsonProperty("public_rate_limits") RateLimit[] publicRateLimits,
-      @JsonProperty("private_rate_limits") RateLimit[] privateRateLimits,
-      @JsonProperty("share_rate_limits") Boolean shareRateLimits) {
+    /**
+     * Constructor
+     *
+     * @param currencyPairs Map of {@link CurrencyPair} -> {@link CurrencyPairMetaData}
+     * @param currency      Map of currency -> {@link CurrencyMetaData}
+     */
+    public ExchangeMetaData(
+            @JsonProperty("currency_pairs") Map<CurrencyPair, CurrencyPairMetaData> currencyPairs,
+            @JsonProperty("currencies") Map<Currency, CurrencyMetaData> currency,
+            @JsonProperty("public_rate_limits") RateLimit[] publicRateLimits,
+            @JsonProperty("private_rate_limits") RateLimit[] privateRateLimits,
+            @JsonProperty("share_rate_limits") Boolean shareRateLimits) {
 
-    this.currencyPairs = currencyPairs;
-    this.currencies = currency;
+        this.currencyPairs = currencyPairs;
+        this.currencies = currency;
 
-    this.publicRateLimits = publicRateLimits;
-    this.privateRateLimits = privateRateLimits;
+        this.publicRateLimits = publicRateLimits;
+        this.privateRateLimits = privateRateLimits;
 
-    this.shareRateLimits = shareRateLimits != null ? shareRateLimits : false;
-  }
-
-  /**
-   * @return minimum number of milliseconds required between any two remote calls, assuming the
-   *     client makes consecutive calls without any bursts or breaks for an infinite period of time.
-   *     Returns null if the rateLimits collection is null or empty
-   */
-  @JsonIgnore
-  public static Long getPollDelayMillis(RateLimit[] rateLimits) {
-    if (rateLimits == null || rateLimits.length == 0) {
-      return null;
+        this.shareRateLimits = shareRateLimits != null ? shareRateLimits : false;
     }
-    long result = 0;
-    for (RateLimit rateLimit : rateLimits) {
-      // this is the delay between calls, we want max, any smaller number is for burst calls
-      result = Math.max(result, rateLimit.getPollDelayMillis());
+
+    /**
+     * @return minimum number of milliseconds required between any two remote calls, assuming the
+     * client makes consecutive calls without any bursts or breaks for an infinite period of time.
+     * Returns null if the rateLimits collection is null or empty
+     */
+    @JsonIgnore
+    public static Long getPollDelayMillis(RateLimit[] rateLimits) {
+        if (rateLimits == null || rateLimits.length == 0) {
+            return null;
+        }
+        long result = 0;
+        for (RateLimit rateLimit : rateLimits) {
+            // this is the delay between calls, we want max, any smaller number is for burst calls
+            result = Math.max(result, rateLimit.getPollDelayMillis());
+        }
+        return result;
     }
-    return result;
-  }
 
-  public Map<CurrencyPair, CurrencyPairMetaData> getCurrencyPairs() {
-    return currencyPairs;
-  }
+    public Map<CurrencyPair, CurrencyPairMetaData> getCurrencyPairs() {
+        return currencyPairs;
+    }
 
-  public Map<Currency, CurrencyMetaData> getCurrencies() {
-    return currencies;
-  }
+    public Map<Currency, CurrencyMetaData> getCurrencies() {
+        return currencies;
+    }
 
-  public RateLimit[] getPublicRateLimits() {
-    return publicRateLimits;
-  }
+    public RateLimit[] getPublicRateLimits() {
+        return publicRateLimits;
+    }
 
-  public RateLimit[] getPrivateRateLimits() {
-    return privateRateLimits;
-  }
+    public RateLimit[] getPrivateRateLimits() {
+        return privateRateLimits;
+    }
 
-  public boolean isShareRateLimits() {
-    return shareRateLimits;
-  }
+    public boolean isShareRateLimits() {
+        return shareRateLimits;
+    }
 
-  @JsonIgnore
-  public String toJSONString() {
-    return ObjectMapperHelper.toJSON(this);
-  }
+    @JsonIgnore
+    public String toJSONString() {
+        return ObjectMapperHelper.toJSON(this);
+    }
 
-  @Override
-  public String toString() {
-    return "ExchangeMetaData [currencyPairs="
-        + currencyPairs
-        + ", currencies="
-        + currencies
-        + ", publicRateLimits="
-        + Arrays.toString(publicRateLimits)
-        + ", privateRateLimits="
-        + Arrays.toString(privateRateLimits)
-        + ", shareRateLimits="
-        + shareRateLimits
-        + "]";
-  }
+    @Override
+    public String toString() {
+        return "ExchangeMetaData [currencyPairs="
+                + currencyPairs
+                + ", currencies="
+                + currencies
+                + ", publicRateLimits="
+                + Arrays.toString(publicRateLimits)
+                + ", privateRateLimits="
+                + Arrays.toString(privateRateLimits)
+                + ", shareRateLimits="
+                + shareRateLimits
+                + "]";
+    }
 }

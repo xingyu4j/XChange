@@ -1,15 +1,11 @@
 package org.knowm.xchange.deribit.v2.service;
 
-import java.io.IOException;
-import java.util.List;
 import org.knowm.xchange.deribit.v2.DeribitExchange;
 import org.knowm.xchange.deribit.v2.dto.Kind;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitCurrency;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitInstrument;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitOrderBook;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitSummary;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitTicker;
-import org.knowm.xchange.deribit.v2.dto.marketdata.DeribitTrades;
+import org.knowm.xchange.deribit.v2.dto.marketdata.*;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Implementation of the market data service for Deribit

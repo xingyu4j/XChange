@@ -1,33 +1,34 @@
 package org.knowm.xchange.dto.meta;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.dto.account.Fee;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
-import org.knowm.xchange.dto.account.Fee;
 
 public class FeeTier implements Serializable, Comparable<FeeTier> {
 
-  private static final long serialVersionUID = -4350427635840047928L;
+    private static final long serialVersionUID = -4350427635840047928L;
 
-  @JsonProperty("begin_quantity")
-  public final BigDecimal beginQuantity;
+    @JsonProperty("begin_quantity")
+    public final BigDecimal beginQuantity;
 
-  @JsonProperty("fee")
-  public Fee fee;
+    @JsonProperty("fee")
+    public Fee fee;
 
-  public FeeTier(
-      @JsonProperty("begin_quantity") BigDecimal beginQuantity, @JsonProperty("fee") Fee fee) {
-    this.beginQuantity = beginQuantity;
-    this.fee = fee;
-  }
+    public FeeTier(
+            @JsonProperty("begin_quantity") BigDecimal beginQuantity, @JsonProperty("fee") Fee fee) {
+        this.beginQuantity = beginQuantity;
+        this.fee = fee;
+    }
 
-  @Override
-  public String toString() {
-    return "FeeTier [beginQuantity=" + beginQuantity + ", fee=" + fee;
-  }
+    @Override
+    public String toString() {
+        return "FeeTier [beginQuantity=" + beginQuantity + ", fee=" + fee;
+    }
 
-  @Override
-  public int compareTo(FeeTier other) {
-    return beginQuantity.compareTo(other.beginQuantity);
-  }
+    @Override
+    public int compareTo(FeeTier other) {
+        return beginQuantity.compareTo(other.beginQuantity);
+    }
 }

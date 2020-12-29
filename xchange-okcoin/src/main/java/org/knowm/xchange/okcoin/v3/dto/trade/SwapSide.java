@@ -1,8 +1,9 @@
 package org.knowm.xchange.okcoin.v3.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
+
+import java.util.stream.Stream;
 
 @AllArgsConstructor
 public enum SwapSide {

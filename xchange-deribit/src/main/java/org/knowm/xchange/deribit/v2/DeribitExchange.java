@@ -1,11 +1,5 @@
 package org.knowm.xchange.deribit.v2;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import org.knowm.xchange.BaseExchange;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.ExchangeSpecification;
@@ -20,6 +14,9 @@ import org.knowm.xchange.deribit.v2.service.DeribitTradeService;
 import org.knowm.xchange.dto.meta.CurrencyMetaData;
 import org.knowm.xchange.dto.meta.CurrencyPairMetaData;
 import org.knowm.xchange.exceptions.ExchangeException;
+
+import java.io.IOException;
+import java.util.*;
 
 public class DeribitExchange extends BaseExchange implements Exchange {
 

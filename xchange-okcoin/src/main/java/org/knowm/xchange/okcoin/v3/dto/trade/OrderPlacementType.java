@@ -2,8 +2,9 @@ package org.knowm.xchange.okcoin.v3.dto.trade;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.stream.Stream;
 import lombok.AllArgsConstructor;
+
+import java.util.stream.Stream;
 
 /**
  * optional Fill in number for parameter， 0: Normal limit order (Unfilled and 0 represent normal

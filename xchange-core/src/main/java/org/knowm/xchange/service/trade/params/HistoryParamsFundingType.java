@@ -4,7 +4,7 @@ import org.knowm.xchange.dto.account.FundingRecord;
 
 public interface HistoryParamsFundingType extends TradeHistoryParams {
 
-  FundingRecord.Type getType();
+    FundingRecord.Type getType();
 
-  void setType(FundingRecord.Type type);
+    void setType(FundingRecord.Type type);
 }

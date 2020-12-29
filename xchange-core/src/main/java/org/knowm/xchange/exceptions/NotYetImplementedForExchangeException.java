@@ -10,19 +10,21 @@ package org.knowm.xchange.exceptions;
  */
 public class NotYetImplementedForExchangeException extends UnsupportedOperationException {
 
-  /**
-   * Constructor
-   *
-   * @param message Message
-   */
-  public NotYetImplementedForExchangeException(String message) {
+    /**
+     * Constructor
+     *
+     * @param message Message
+     */
+    public NotYetImplementedForExchangeException(String message) {
 
-    super(message);
-  }
+        super(message);
+    }
 
-  /** Constructor */
-  public NotYetImplementedForExchangeException() {
+    /**
+     * Constructor
+     */
+    public NotYetImplementedForExchangeException() {
 
-    this("Feature not yet implemented for exchange.");
-  }
+        this("Feature not yet implemented for exchange.");
+    }
 }

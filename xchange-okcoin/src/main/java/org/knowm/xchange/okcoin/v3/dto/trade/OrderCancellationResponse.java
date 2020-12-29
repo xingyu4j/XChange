@@ -8,14 +8,18 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class OrderCancellationResponse extends OkexResponse {
 
-  @JsonProperty("instrument_id")
-  private String instrumentId;
+    @JsonProperty("instrument_id")
+    private String instrumentId;
 
-  /** order ID */
-  @JsonProperty("order_id")
-  private String orderId;
+    /**
+     * order ID
+     */
+    @JsonProperty("order_id")
+    private String orderId;
 
-  /** the order ID customised by yourself */
-  @JsonProperty("client_oid")
-  private String clientOid;
+    /**
+     * the order ID customised by yourself
+     */
+    @JsonProperty("client_oid")
+    private String clientOid;
 }

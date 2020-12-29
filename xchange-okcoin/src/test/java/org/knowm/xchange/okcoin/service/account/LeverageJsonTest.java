@@ -1,18 +1,19 @@
 package org.knowm.xchange.okcoin.service.account;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
-import java.io.InputStream;
-import java.math.BigDecimal;
-import java.util.Map;
 import org.junit.Test;
 import org.knowm.xchange.okcoin.v3.dto.MarginMode;
 import org.knowm.xchange.okcoin.v3.dto.account.FuturesLeverageResponse;
 import org.knowm.xchange.okcoin.v3.dto.account.FuturesLeverageResponse.FixedLeverage;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.math.BigDecimal;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /** @author timmolter */
 public class LeverageJsonTest {

@@ -3,31 +3,31 @@ package org.knowm.xchange.service.trade.params;
 import org.knowm.xchange.currency.CurrencyPair;
 
 public class DefaultCancelOrderByCurrencyPairAndIdParams
-    implements CancelOrderByIdParams, CancelOrderByCurrencyPair {
+        implements CancelOrderByIdParams, CancelOrderByCurrencyPair {
 
-  private CurrencyPair currencyPair;
-  private String orderId;
+    private CurrencyPair currencyPair;
+    private String orderId;
 
-  public DefaultCancelOrderByCurrencyPairAndIdParams(CurrencyPair currencyPair, String orderId) {
-    this.currencyPair = currencyPair;
-    this.orderId = orderId;
-  }
+    public DefaultCancelOrderByCurrencyPairAndIdParams(CurrencyPair currencyPair, String orderId) {
+        this.currencyPair = currencyPair;
+        this.orderId = orderId;
+    }
 
-  public void setCurrencyPair(CurrencyPair pair) {
-    this.currencyPair = pair;
-  }
+    @Override
+    public CurrencyPair getCurrencyPair() {
+        return currencyPair;
+    }
 
-  public void setOrderId(String orderId) {
-    this.orderId = orderId;
-  }
+    public void setCurrencyPair(CurrencyPair pair) {
+        this.currencyPair = pair;
+    }
 
-  @Override
-  public CurrencyPair getCurrencyPair() {
-    return currencyPair;
-  }
+    @Override
+    public String getOrderId() {
+        return orderId;
+    }
 
-  @Override
-  public String getOrderId() {
-    return orderId;
-  }
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 }
