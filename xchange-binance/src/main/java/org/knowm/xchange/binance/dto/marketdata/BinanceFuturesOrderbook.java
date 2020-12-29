@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
  *
  * @author xingyu
  */
-public final class BinanceOrderbook {
+public final class BinanceFuturesOrderbook {
     /**
      * Last update ID
      */
@@ -25,7 +25,7 @@ public final class BinanceOrderbook {
      */
     public final SortedMap<BigDecimal, BigDecimal> asks;
 
-    public BinanceOrderbook(
+    public BinanceFuturesOrderbook(
             @JsonProperty("lastUpdateId") long lastUpdateId,
             @JsonProperty("bids") List<Object[]> bidsJson,
             @JsonProperty("asks") List<Object[]> asksJson) {

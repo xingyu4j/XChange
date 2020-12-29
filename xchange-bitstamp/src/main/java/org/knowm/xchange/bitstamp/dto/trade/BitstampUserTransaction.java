@@ -32,7 +32,7 @@ public final class BitstampUserTransaction {
    * @param datetime
    * @param id
    * @param order_id
-   * @param type
+   * @param type 订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
    * @param fee
    */
   public BitstampUserTransaction(

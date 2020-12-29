@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  *
  * @author xingyu
  */
-public final class BinancePrice implements Comparable<BinancePrice> {
+public final class BinanceFuturesPrice implements Comparable<BinanceFuturesPrice> {
     /**
      * 交易对
      */
@@ -21,17 +21,22 @@ public final class BinancePrice implements Comparable<BinancePrice> {
      * 价格
      */
     private final BigDecimal price;
+    /**
+     * 撮合引擎时间
+     */
+    private final long time;
 
-    public BinancePrice(
-            @JsonProperty("symbol") String symbol, @JsonProperty("price") BigDecimal price) {
-        this(CurrencyPairDeserializer.getCurrencyPairFromString(symbol), price);
+    public BinanceFuturesPrice(
+            @JsonProperty("symbol") String symbol, @JsonProperty("price") BigDecimal price, @JsonProperty("time") long time) {
+        this(CurrencyPairDeserializer.getCurrencyPairFromString(symbol), price, time);
     }
 
-    public BinancePrice(CurrencyPair pair, BigDecimal price) {
+    public BinanceFuturesPrice(CurrencyPair pair, BigDecimal price, long time) {
         Assert.notNull(price, "Null price");
         Assert.notNull(pair, "Null pair");
         this.pair = pair;
         this.price = price;
+        this.time = time;
     }
 
     public CurrencyPair getCurrencyPair() {
@@ -42,8 +47,12 @@ public final class BinancePrice implements Comparable<BinancePrice> {
         return price;
     }
 
+    public long getTime() {
+        return time;
+    }
+
     @Override
-    public int compareTo(BinancePrice o) {
+    public int compareTo(BinanceFuturesPrice o) {
         if (pair.compareTo(o.pair) == 0) {
             return price.compareTo(o.price);
         }
@@ -63,10 +72,10 @@ public final class BinancePrice implements Comparable<BinancePrice> {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof BinancePrice)) {
+        if (!(obj instanceof BinanceFuturesPrice)) {
             return false;
         }
-        BinancePrice other = (BinancePrice) obj;
+        BinanceFuturesPrice other = (BinanceFuturesPrice) obj;
         return pair.equals(other.pair) && price.equals(other.price);
     }
 

@@ -6,7 +6,9 @@ package org.knowm.xchange.binance.dto.meta.exchangeinfo;
  * @author xingyu
  */
 public class Symbol {
-
+    /**
+     * 报价资产
+     */
     private String quoteAsset;
 
     private String icebergAllowed;
@@ -28,17 +30,27 @@ public class Symbol {
      * 状态
      */
     private String status;
-
+    /**
+     * 数量小数点位数
+     */
     private String quotePrecision;
 
     private String quoteAssetPrecision;
-
+    /**
+     * 标的资产精度
+     */
     private String baseAssetPrecision;
-
+    /**
+     * 订单类型
+     */
     private String[] orderTypes;
-
+    /**
+     * 交易限制
+     */
     private Filter[] filters;
-
+    /**
+     * 权限
+     */
     private String[] permissions;
 
     public String getQuoteAsset() {

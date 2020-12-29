@@ -5,13 +5,17 @@ package org.knowm.xchange.binance.dto.meta.exchangeinfo;
  *
  * @author xingyu
  */
-public class RateLimit {
+public class FuturesRateLimit {
     /**
-     *  上限次数
+     * 上限次数
      */
     private String limit;
     /**
      * MINUTE 按照分钟计算
+     */
+    private long intervalNum;
+    /**
+     * 上限次数
      */
     private String interval;
     /**
@@ -26,6 +30,14 @@ public class RateLimit {
 
     public void setLimit(String limit) {
         this.limit = limit;
+    }
+
+    public long getIntervalNum() {
+        return intervalNum;
+    }
+
+    public void setIntervalNum(long intervalNum) {
+        this.intervalNum = intervalNum;
     }
 
     public String getInterval() {
@@ -50,6 +62,8 @@ public class RateLimit {
                 + limit
                 + ", interval = "
                 + interval
+                + ", intervalNum = "
+                + intervalNum
                 + ", rateLimitType = "
                 + rateLimitType
                 + "]";

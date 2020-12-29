@@ -46,7 +46,7 @@ public class LoanOrder implements Serializable {
     /**
      * Constructor
      *
-     * @param type           Order type i.e. bid or ask
+     * @param type 订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
      * @param currency       The loan currency
      * @param originalAmount Amount to be ordered / amount that was ordered
      * @param dayPeriod      Duration of loan in days

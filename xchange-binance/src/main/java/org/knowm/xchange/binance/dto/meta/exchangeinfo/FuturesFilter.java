@@ -1,11 +1,11 @@
 package org.knowm.xchange.binance.dto.meta.exchangeinfo;
 
 /**
- * 交易限制
+ * 合约交易限制
  *
  * @author xingyu
  */
-public class Filter {
+public class FuturesFilter {
     /**
      * 价格上限, 最大价格
      */
@@ -41,7 +41,7 @@ public class Filter {
      */
     private String stepSize;
     /**
-     *
+     * 价格上限, 最大价格
      */
     private String minNotional;
 

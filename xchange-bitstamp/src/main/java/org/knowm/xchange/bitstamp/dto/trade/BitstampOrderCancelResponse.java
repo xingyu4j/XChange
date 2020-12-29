@@ -19,7 +19,7 @@ public class BitstampOrderCancelResponse {
    * @param id Order id
    * @param amount Order amount
    * @param price Order price
-   * @param type Order type
+   * @param type 订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
    * @param error Order error
    */
   public BitstampOrderCancelResponse(

@@ -26,7 +26,7 @@ public class BitstampOrderTransaction {
    *
    * @param datetime date and time of transaction
    * @param tid transaction id
-   * @param type transaction type
+   * @param type 订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
    * @param usd settled amoun
    * @param btc traded amount
    * @param price transaction rate

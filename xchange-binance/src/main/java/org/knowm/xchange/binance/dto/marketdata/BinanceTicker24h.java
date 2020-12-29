@@ -9,6 +9,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
+ * 24hr价格变动情况
+ *
  * @author xingyu
  */
 public final class BinanceTicker24h {
@@ -33,9 +35,21 @@ public final class BinanceTicker24h {
      * 最近一次成交额
      */
     private final BigDecimal lastQty;
+    /**
+     * 买单价格
+     */
     private final BigDecimal bidPrice;
+    /**
+     * 买单数量
+     */
     private final BigDecimal bidQty;
+    /**
+     * 卖单价格
+     */
     private final BigDecimal askPrice;
+    /**
+     * 卖单数量
+     */
     private final BigDecimal askQty;
     /**
      * 24小时内第一次成交的价格

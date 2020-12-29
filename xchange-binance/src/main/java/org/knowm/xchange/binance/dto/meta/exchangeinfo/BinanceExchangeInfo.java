@@ -19,8 +19,7 @@ public class BinanceExchangeInfo {
      */
     private String serverTime;
     /**
-     * 这些在"限制种类 (rateLimitType)"下的"枚举定义"部分中定义
-     *  所有限制都是可选的
+     * API访问的限制
      */
     private RateLimit[] rateLimits;
     /**

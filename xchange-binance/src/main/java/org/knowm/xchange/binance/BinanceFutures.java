@@ -2,9 +2,8 @@ package org.knowm.xchange.binance;
 
 import org.knowm.xchange.binance.dto.BinanceException;
 import org.knowm.xchange.binance.dto.marketdata.*;
-import org.knowm.xchange.binance.dto.meta.BinanceSystemStatus;
 import org.knowm.xchange.binance.dto.meta.BinanceTime;
-import org.knowm.xchange.binance.dto.meta.exchangeinfo.BinanceExchangeInfo;
+import org.knowm.xchange.binance.dto.meta.exchangeinfo.BinanceExchangeFuturesInfo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -16,21 +15,12 @@ import java.util.List;
 
 /**
  * @author xingyu
- */
+ * @Description 币安合约
+ * @date 2020-12-29 15:22
+ **/
 @Path("")
 @Produces(MediaType.APPLICATION_JSON)
-public interface Binance {
-
-
-    /**
-     * 系统状态 (System)
-     *
-     * @throws IOException IOException IOException
-     */
-    @GET
-    @Path("wapi/v3/systemStatus.html")
-    BinanceSystemStatus systemStatus() throws IOException;
-
+public interface BinanceFutures {
     /**
      * 测试服务器连通性
      *
@@ -38,7 +28,7 @@ public interface Binance {
      * @throws IOException IOException
      */
     @GET
-    @Path("api/v3/ping")
+    @Path("fapi/v1/ping")
     Object ping() throws IOException;
 
     /**
@@ -48,7 +38,7 @@ public interface Binance {
      * @throws IOException IOException
      */
     @GET
-    @Path("api/v3/time")
+    @Path("fapi/v1/time")
     BinanceTime time() throws IOException;
 
     /**
@@ -58,9 +48,8 @@ public interface Binance {
      * @throws IOException IOException
      */
     @GET
-    @Path("api/v3/exchangeInfo")
-    BinanceExchangeInfo exchangeInfo() throws IOException;
-
+    @Path("fapi/v1/exchangeInfo")
+    BinanceExchangeFuturesInfo exchangeInfo() throws IOException;
     /**
      * 深度信息
      * @param symbol    交易对
@@ -71,7 +60,7 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/depth")
+    @Path("fapi/v1/depth")
     BinanceOrderbook depth(@QueryParam("symbol") String symbol, @QueryParam("limit") Integer limit)
             throws IOException, BinanceException;
 
@@ -82,21 +71,15 @@ public interface Binance {
      * 如果没有发送任何筛选参数(fromId, startTime,endTime)，默认返回最近的成交记录
      *
      * @param symbol    交易对
-     * @param fromId 从包含fromId的成交id开始返回结果
-     * @param startTime 从该时刻之后的成交记录开始返回结果
-     * @param endTime 可选, 返回该时刻为止的成交记录
      * @param limit 可选, 默认 500; 最大 1000.
      * @return  List<BinanceAggTrades>
      * @throws IOException IOException
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("fapi/v1/aggTrades")
+    @Path("fapi/v1/trades")
     List<BinanceAggTrades> aggTrades(
             @QueryParam("symbol") String symbol,
-            @QueryParam("fromId") Long fromId,
-            @QueryParam("startTime") Long startTime,
-            @QueryParam("endTime") Long endTime,
             @QueryParam("limit") Integer limit)
             throws IOException, BinanceException;
 
@@ -107,7 +90,7 @@ public interface Binance {
      * 每根K线的开盘时间可视为唯一ID
      * 如果未发送 startTime 和 endTime ，默认返回最近的交易。
      * @param symbol    交易对
-     * @param interval
+     * @param interval 时间间隔
      * @param limit 可选, default 500; max 500.
      * @param startTime 可选,
      * @param endTime 可选,
@@ -116,7 +99,7 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/klines")
+    @Path("fapi/v1/klines")
     List<Object[]> klines(
             @QueryParam("symbol") String symbol,
             @QueryParam("interval") String interval,
@@ -124,7 +107,6 @@ public interface Binance {
             @QueryParam("startTime") Long startTime,
             @QueryParam("endTime") Long endTime)
             throws IOException, BinanceException;
-
 
     /**
      * 24hr 价格变动情况
@@ -135,8 +117,8 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/ticker/24hr")
-    List<BinanceTicker24h> ticker24h() throws IOException, BinanceException;
+    @Path("fapi/v1/ticker/24hr")
+    List<BinanceFuturesTicker24h> ticker24h() throws IOException, BinanceException;
 
     /**
      * 24hr 价格变动情况
@@ -147,8 +129,8 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/ticker/24hr")
-    BinanceTicker24h ticker24h(@QueryParam("symbol") String symbol)
+    @Path("fapi/v1/ticker/24hr")
+    BinanceFuturesTicker24h ticker24h(@QueryParam("symbol") String symbol)
             throws IOException, BinanceException;
 
 
@@ -160,8 +142,8 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/ticker/price")
-    BinancePrice tickerPrice(@QueryParam("symbol") String symbol)
+    @Path("fapi/v1/ticker/price")
+    BinanceFuturesPrice tickerPrice(@QueryParam("symbol") String symbol)
             throws IOException, BinanceException;
 
 
@@ -174,8 +156,8 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/ticker/price")
-    List<BinancePrice> tickerAllPrices() throws IOException, BinanceException;
+    @Path("fapi/v1/ticker/price")
+    List<BinanceFuturesPrice> tickerAllPrices() throws IOException, BinanceException;
 
 
     /**
@@ -186,6 +168,6 @@ public interface Binance {
      * @throws BinanceException BinanceException
      */
     @GET
-    @Path("api/v3/ticker/bookTicker")
-    List<BinancePriceQuantity> tickerAllBookTickers() throws IOException, BinanceException;
+    @Path("fapi/v1/ticker/bookTicker")
+    List<BinanceFuturesPriceQuantity> tickerAllBookTickers() throws IOException, BinanceException;
 }

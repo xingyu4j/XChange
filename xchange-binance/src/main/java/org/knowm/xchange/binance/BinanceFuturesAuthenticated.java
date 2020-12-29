@@ -19,7 +19,7 @@ import java.util.Map;
  */
 @Path("")
 @Produces(MediaType.APPLICATION_JSON)
-public interface BinanceAuthenticated extends Binance {
+public interface BinanceFuturesAuthenticated extends Binance {
 
     String SIGNATURE = "signature";
     String X_MBX_APIKEY = "X-MBX-APIKEY";
@@ -27,23 +27,25 @@ public interface BinanceAuthenticated extends Binance {
     /**
      * 下单 (TRADE)
      *
-     * @param symbol    交易对
-     * @param side 买卖方向 SELL, BUY
-     * @param type 订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
-     * @param timeInForce
-     * @param quantity
-     * @param price 可选，必须仅提供限价订单
-     * @param newClientOrderId 客户自定义的唯一订单ID。 如果未发送，则自动生成
-     * @param stopPrice 可选，与止损单一起使用
-     * @param icebergQty 可选，与冰山订单一起使用
-     * @param recvWindow 	赋值不能大于 60000
-     * @param timestamp
-     * @return BinanceNewOrder
+     * @param symbol           YES	交易对
+     * @param side             YES	买卖方向 SELL, BUY
+     * @param positionSide     NO	持仓方向，单向持仓模式下非必填，默认且仅可填BOTH;在双向持仓模式下必填,且仅可选择 LONG 或 SHORT
+     * @param orderType        YES	订单类型 LIMIT, MARKET, STOP, TAKE_PROFIT, STOP_MARKET, TAKE_PROFIT_MARKET, TRAILING_STOP_MARKET
+     * @param timeInForce      NO	有效方法
+     * @param quantity         NO	下单数量,使用closePosition不支持此参数。
+     * @param price            NO	委托价格
+     * @param reduceOnly       NO	true, false; 非双开模式下默认false；双开模式下不接受此参数； 使用closePosition不支持此参数。
+     * @param newClientOrderId NO	用户自定义的订单号，不可以重复出现在挂单中。如空缺系统会自动赋值
+     * @param stopPrice        NO	触发价, 仅 STOP, STOP_MARKET, TAKE_PROFIT, TAKE_PROFIT_MARKET 需要此参数
+     * @param workingType      NO	stopPrice 触发类型: MARK_PRICE(标记价格), CONTRACT_PRICE(合约最新价). 默认 CONTRACT_PRICE
+     * @param newOrderRespType NO	"ACK", "RESULT", 默认 "ACK"
+     * @return 下单
      * @throws IOException IOException
      * @throws BinanceException BinanceException
      */
     @POST
-    @Path("api/v3/order")
+    @Path("fapi/v1/order")
+    // TODO this
     BinanceNewOrder newOrder(
             @FormParam("symbol") String symbol,
             @FormParam("side") OrderSide side,
