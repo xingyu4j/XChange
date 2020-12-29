@@ -11,7 +11,7 @@
     <artifactId>xchange-simulated</artifactId>
 
     <name>XChange Simulated</name>
-    <description>A simulated/mock exchange, for use in integration testing.</description>
+    <description>模拟/模拟交换，用于集成测试.</description>
 
     <url>http://knowm.org/open-source/xchange/</url>
     <inceptionYear>2012</inceptionYear>
