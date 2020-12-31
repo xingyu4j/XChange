@@ -4,21 +4,57 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * 撤销订单
+ *
  * @author xingyu
  */
 public final class BinanceCancelledOrder {
-
+    /**
+     * 交易对
+     */
     public final String symbol;
+    /**
+     * 用户自定义的订单号
+     */
     public final String origClientOrderId;
+    /**
+     * 订单号
+     */
     public final long orderId;
+    /**
+     * 用户自定义的订单号
+     */
     public final String clientOrderId;
+    /**
+     * 委托价格
+     */
     public String price;
+    /**
+     * 原始委托数量
+     */
     public String origQty;
+    /**
+     * 成交量
+     */
     public String executedQty;
+    /**
+     * 累计交易的金额
+     */
     public String cummulativeQuoteQty;
+    /**
+     * 订单状态
+     */
     public String status;
+    /**
+     * 有效方法
+     */
     public String timeInForce;
+    /**
+     * 订单类型
+     */
     public String type;
+    /**
+     * 买卖方向
+     */
     public String side;
 
     public BinanceCancelledOrder(
