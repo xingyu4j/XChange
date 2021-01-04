@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 import static org.knowm.xchange.utils.DigestUtils.bytesToHex;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public class BinanceHmacDigest extends BaseParamsDigest {
 

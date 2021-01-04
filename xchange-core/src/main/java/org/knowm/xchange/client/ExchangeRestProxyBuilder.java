@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public final class ExchangeRestProxyBuilder<T> {
 

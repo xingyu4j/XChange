@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public final class Fee implements Serializable {
 

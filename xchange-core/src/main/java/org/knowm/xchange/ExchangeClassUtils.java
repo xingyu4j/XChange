@@ -3,7 +3,7 @@ package org.knowm.xchange;
 import org.knowm.xchange.exceptions.ExchangeException;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public final class ExchangeClassUtils {
 

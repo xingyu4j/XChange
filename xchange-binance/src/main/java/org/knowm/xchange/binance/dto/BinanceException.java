@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  * 币安异常
- * @author 99121
+ * @author xingyu
  */
 public class BinanceException extends HttpStatusExceptionSupport implements HttpResponseAware {
 

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public final class AddressWithTag implements Serializable {
 

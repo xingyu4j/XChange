@@ -13,7 +13,7 @@ import static org.knowm.xchange.ExchangeClassUtils.exchangeClassForName;
  * <ul>
  *   <li>Manages the creation of specific Exchange implementations using runtime dependencies
  * </ul>
- * @author 99121
+ * @author xingyu
  */
 public enum ExchangeFactory {
     INSTANCE;

@@ -10,7 +10,7 @@ import org.knowm.xchange.currency.CurrencyPair;
 
 /**
  * 用于在连接阶段指定订阅对于实例化，请使用builder @link {@link ProductSubscriptionBuilder}
- * @author 99121
+ * @author xingyu
  */
 public class ProductSubscription {
   private final List<CurrencyPair> orderBook;

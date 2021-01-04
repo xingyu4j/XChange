@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * DTO 交易所贷款订单簿
- * @author 99121
+ * @author xingyu
  */
 public final class LoanOrderBook implements Serializable {
 

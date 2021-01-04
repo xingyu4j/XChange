@@ -3,7 +3,7 @@ package org.knowm.xchange.client;
 import si.mazi.rescu.ClientConfig;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public interface ClientConfigCustomizer {
 

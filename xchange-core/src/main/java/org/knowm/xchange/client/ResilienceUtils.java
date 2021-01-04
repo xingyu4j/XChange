@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.concurrent.Callable;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public final class ResilienceUtils {
 

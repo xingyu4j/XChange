@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public class CurrencyPairMetaData implements Serializable {
 

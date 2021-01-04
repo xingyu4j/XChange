@@ -16,7 +16,7 @@ import java.net.UnknownHostException;
 import java.time.Duration;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 @Beta
 public class ResilienceRegistries {

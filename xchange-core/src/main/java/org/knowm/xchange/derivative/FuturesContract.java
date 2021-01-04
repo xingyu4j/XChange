@@ -13,7 +13,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Objects;
 /**
- * @author 99121
+ * @author xingyu
  */
 public class FuturesContract extends Instrument
         implements Derivative, Comparable<FuturesContract>, Serializable {

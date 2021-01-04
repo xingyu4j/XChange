@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public abstract class BaseExchange implements Exchange {
 

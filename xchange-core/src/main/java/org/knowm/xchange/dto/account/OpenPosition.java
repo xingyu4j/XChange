@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public class OpenPosition {
     /**

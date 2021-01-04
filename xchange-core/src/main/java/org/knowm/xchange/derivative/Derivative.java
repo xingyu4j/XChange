@@ -3,7 +3,7 @@ package org.knowm.xchange.derivative;
 import org.knowm.xchange.currency.CurrencyPair;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public interface Derivative {
     CurrencyPair getCurrencyPair();

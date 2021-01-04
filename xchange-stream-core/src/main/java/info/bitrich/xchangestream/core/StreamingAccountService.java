@@ -8,7 +8,7 @@ import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 import org.knowm.xchange.service.account.AccountService;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public interface StreamingAccountService {
 

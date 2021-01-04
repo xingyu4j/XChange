@@ -9,7 +9,7 @@ import org.knowm.xchange.service.trade.params.TradeHistoryParamsTimeSpan;
 import java.util.Date;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public class BinanceFundingHistoryParams
         implements TradeHistoryParamCurrency, TradeHistoryParamsTimeSpan, HistoryParamsFundingType {

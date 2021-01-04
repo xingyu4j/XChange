@@ -11,7 +11,7 @@ import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public interface StreamingExchange extends Exchange {
     String USE_SANDBOX = "Use_Sandbox";

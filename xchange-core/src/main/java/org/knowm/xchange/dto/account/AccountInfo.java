@@ -9,7 +9,7 @@ import java.util.*;
  * 帐户信息DTO
  *
  * <p>帐户信息是与用户登录相关的任何特定信息
- * @author 99121
+ * @author xingyu
  */
 public final class AccountInfo implements Serializable {
 

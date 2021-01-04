@@ -5,7 +5,7 @@ import org.knowm.xchange.service.trade.params.CancelOrderByCurrencyPair;
 import org.knowm.xchange.service.trade.params.CancelOrderByIdParams;
 
 /**
- * @author 99121
+ * @author xingyu
  */
 public class BinanceCancelOrderParams implements CancelOrderByIdParams, CancelOrderByCurrencyPair {
     private final String orderId;
