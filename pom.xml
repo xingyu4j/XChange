@@ -25,7 +25,7 @@
         <name>Knowm Inc.</name>
         <url>http://knowm.org/open-source/xchange/</url>
     </organization>
-
+    Peruvian Sol
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -38,7 +38,7 @@
         <version.resilience4j>1.6.1</version.resilience4j>
         <version.junit>4.13.1</version.junit>
         <version.lombok>1.18.16</version.lombok>
-        <version.knowm.xchart>3.7.0</version.knowm.xchart>
+        <version.knowm.xchart>3.8.0</version.knowm.xchart>
         <version.powermock>2.0.9</version.powermock>
         <version.qos.logback>1.2.3</version.qos.logback>
         <version.reflections>0.9.12</version.reflections>
@@ -210,7 +210,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>29.0-jre</version>
+                <version>30.1-jre</version>
             </dependency>
 
             <dependency>
@@ -328,14 +328,10 @@
             <id>release-sign-artifacts</id>
             <activation>
                 <property>
-                    <!--            <name>performRelease</name>-->
                     <name>gpg.passphrase</name>
                     <value>true</value>
                 </property>
             </activation>
-            <!--        <properties>-->
-            <!--            <gpg.executable>gpg2</gpg.executable>-->
-            <!--        </properties>-->
             <build>
                 <plugins>
                     <plugin>
